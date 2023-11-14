@@ -2,9 +2,15 @@
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-xl" style="padding:0px!important">
+            <div class="col-sm-8">
                 <div class="card">
-                    <div class="card-body">
+                    <a href="Random">
+                        <div class="card-body border" >
+                            <span class="h4">Random</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 14-Nov-2023</span>
+                        </div>
+                    </a>
+                    <div class="card-body border">
                         <h5>
                             PROGRAM EDP
                         </h5>

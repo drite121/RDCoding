@@ -24,7 +24,7 @@
 
 </head>
 
-<body onload="Greeting()">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top">
             <div class="container col-md-12">
@@ -39,7 +39,8 @@
 
                     @endguest
                     <!-- Right Side Of Navbar -->
-
+                    Home
+                    About
                     <!-- Authentication Links -->
                     @guest
                     @else
