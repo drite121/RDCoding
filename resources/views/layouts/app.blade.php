@@ -12,8 +12,8 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/RDZ.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/RDZ.css') }}" rel="stylesheet">
 
 </head>
 
