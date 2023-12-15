@@ -7,21 +7,22 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('/images/KRR.png') }}" type="image/gif" sizes="16x16">
+    <link rel="icon" href="" type="image/gif" sizes="16x16">
     <title style="font-size: 20px">{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/RDZ.js') }}"></script>
+    <script src="{{ asset('js/prismTN.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/RDZ.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/prismTN.css') }}" rel="stylesheet">
 
 </head>
 

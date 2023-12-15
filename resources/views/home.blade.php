@@ -6,15 +6,17 @@
                 <div class="card">
                     <a href="Random">
                         <div class="card-body border" >
+                            <span class="h4"></span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 14-Nov-2023</span>
+                        </div>
+                    </a>
+                    <a href="Random">
+                        <div class="card-body border" >
                             <span class="h4">Random</span>
                             <span class="float-right" style=margin-buttom:0px>tgl 14-Nov-2023</span>
                         </div>
                     </a>
-                    <div class="card-body border">
-                        <h5>
-                            PROGRAM EDP
-                        </h5>
-                    </div>
+
                 </div>
             </div>
         </div>
