@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/Random', function () {
     return view('Random');
 });
+
+Route::get('/GameHitung', function () {
+    return view('GameHitung');
+});
