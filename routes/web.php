@@ -24,3 +24,7 @@ Route::get('/Random', function () {
 Route::get('/GameHitung', function () {
     return view('GameHitung');
 });
+
+Route::get('/PasswordGenerator', function () {
+    return view('PasswordGenerator');
+});
