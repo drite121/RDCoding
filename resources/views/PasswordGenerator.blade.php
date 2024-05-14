@@ -148,6 +148,8 @@
             {
                 AllChars += Number;
             }
+
+            Generate();
         }
 
         function CopyText() {
@@ -174,7 +176,7 @@
                     <div class="card-body">
                         <div class="input-group input-group-lg">
                             
-                            <input type="text" class="form-control" id="GPBox" onload="Generate()">
+                            <input type="text" class="form-control" id="GPBox">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" title="Copy" style="cursor:pointer;" onclick="CopyText()"><i class="bi bi-copy"></i></span>
                             </div>
@@ -188,15 +190,10 @@
                             <div class="form-row align-items-center">
                                 <div class="col-md-4">
                                     <h5>Password Length</h5>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col pr-0">
-                                            <input type="number" class="form-control" min="4" max="24" value="12" id="LengthNumber" onchange="syncNtoR()">
-                                        </div>
-                                        <div class="col pl-0">
-                                            <input type="range" class="form-range mt-2" min="4" max="24" value="12" id="LengthRange">  
-                                        </div>
-                                    </div>                              
+                                    <input type="range" class="form-range mt-2 col-sm-12" min="4" max="24" value="12" id="LengthRange"> 
+                                    <input type="number" class="form-control" min="4" max="24" value="12" id="LengthNumber" onchange="syncNtoR()">
+                                     
+                                                                    
                                 </div>
 
                                 <div class="col-md-4">

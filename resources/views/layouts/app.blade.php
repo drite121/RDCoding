@@ -30,64 +30,23 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top">
             <div class="container col-md-12">
-                <a class="navbar-brand RDZNavBrandCenter RDZUnderLine" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    @guest
-                    @else
-
-                    @endguest
-                    <!-- Right Side Of Navbar -->
-                    Home
-                    About
-                    <!-- Authentication Links -->
-                    @guest
-                    @else
-                        <ul class="navbar-nav ml-auto">
-                            {{-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->NamaUser }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li> --}}
-                            <div style="border-right: 1px solid;margin-right: 5px;padding-right: 5px;"
-                                class="NameWindows">
-                                <p style="font-size: 15px;display: block;margin-bottom: 0px;"><label
-                                        id="greeting1"></label>,
-                                    {{ Auth::user()->NamaUser }}</p> {{-- bisa dikasih profile --}}
-                            </div>
-                            <li><a class="RDZlogout" style="color: black;font-size: 15px;display: block;"
-                                    href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    @endguest
-
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{ url('/About') }}">About</a>
+                        </li>
+                    </ul>
                 </div>
+                
             </div>
         </nav>
 
@@ -96,13 +55,7 @@
         </main>
     </div>
     <script>
-        $(document).ready(function() {
-            $('.dropdown-submenu a.test').on("click", function(e) {
-                $(this).next('ul').toggle();
-                e.stopPropagation();
-                e.preventDefault();
-            });
-        });
+       
     </script>
 </body>
 
