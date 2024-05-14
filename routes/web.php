@@ -44,3 +44,7 @@ Route::get('/QRGenerator', function () {
 }); 
 Route::get('/GenerateQR', [QRGeneratorController::class, 'Generate'])->name("QR.Generate");
 Route::get('/DownloadQR', [QRGeneratorController::class, 'Download'])->name("QR.Download");
+
+Route::get('/SortDataJS', function () {
+    return view('SortDataJS');
+});
