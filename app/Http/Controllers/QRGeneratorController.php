@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\QrCodeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
-class QRGeneratorController extends Controller
+class QRController extends Controller
 {
     public function Generate(Request $request)
     {

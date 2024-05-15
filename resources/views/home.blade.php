@@ -4,46 +4,52 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="card">
+                <a href="BarcodeGenerator">
+                        <div class="card-body border" >
+                            <span class="h5">Barcode Generatorr</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 25-Feb-2024</span>
+                        </div>
+                    </a>
                     <a href="QRScanner">
                         <div class="card-body border" >
                             <span class="h5">QR Scanner</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 18-Feb-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 18-Feb-2024</span>
                         </div>
                     </a>
                     <a href="SortDataJS">
                         <div class="card-body border" >
                             <span class="h5">Sort Data JS</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 11-Feb-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 11-Feb-2024</span>
                         </div>
                     </a>
                     <a href="QRGenerator">
                         <div class="card-body border" >
                             <span class="h5">QR Generator</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 04-Feb-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 04-Feb-2024</span>
                         </div>
                     </a>
                     <a href="BMICalculator">
                         <div class="card-body border" >
                             <span class="h5">BMI Calculator</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 28-Jan-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 28-Jan-2024</span>
                         </div>
                     </a>
                     <a href="PasswordGenerator">
                         <div class="card-body border" >
                             <span class="h5">Password Generator</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 21-Jan-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 21-Jan-2024</span>
                         </div>
                     </a>
                     <a href="GameHitung">
                         <div class="card-body border" >
                             <span class="h5">Game Hitung</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 14-Jan-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 14-Jan-2024</span>
                         </div>
                     </a>
                     <a href="Random">
                         <div class="card-body border" >
                             <span class="h5">Random</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 07-Jan-2023</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 07-Jan-2024</span>
                         </div>
                     </a>
 

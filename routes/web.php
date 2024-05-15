@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\QRGeneratorController;
+use App\Http\Controllers\BarcodeGeneratorController;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,9 @@ Route::get('/SortDataJS', function () {
 Route::get('/QRScanner', function () {
     return view('QRScanner');
 });
+
+Route::get('/BarcodeGenerator', function () {
+    return view('BarcodeGenerator');
+}); 
+Route::get('/GenerateBarcode', [BarcodeGeneratorController::class, 'Generate']);
+Route::get('/DownloadBarcode', [BarcodeGeneratorController::class, 'Download']);
