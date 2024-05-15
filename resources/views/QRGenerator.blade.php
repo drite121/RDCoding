@@ -112,7 +112,7 @@
                             </div>
                         </div>
 
-                        <P>Refrensi:
+                        <P>Source:
                             <br>
                             <a href="https://harrk.dev/qr-code-generator-in-laravel-10-tutorial/">QR Code Generator Tutorial</a>
                             <br>

@@ -4,7 +4,13 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="card">
-                <a href="SortDataJS">
+                    <a href="QRScanner">
+                        <div class="card-body border" >
+                            <span class="h5">QR Scanner</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 18-Feb-2023</span>
+                        </div>
+                    </a>
+                    <a href="SortDataJS">
                         <div class="card-body border" >
                             <span class="h5">Sort Data JS</span>
                             <span class="float-right" style=margin-buttom:0px>tgl 11-Feb-2023</span>

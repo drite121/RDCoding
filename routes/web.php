@@ -48,3 +48,7 @@ Route::get('/DownloadQR', [QRGeneratorController::class, 'Download'])->name("QR.
 Route::get('/SortDataJS', function () {
     return view('SortDataJS');
 });
+
+Route::get('/QRScanner', function () {
+    return view('QRScanner');
+});
