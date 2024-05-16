@@ -4,7 +4,13 @@
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="card">
-                <a href="BarcodeGenerator">
+                    <a href="Chart">
+                        <div class="card-body border" >
+                            <span class="h5">Chart</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 03-Mar-2024</span>
+                        </div>
+                    </a>
+                    <a href="BarcodeGenerator">
                         <div class="card-body border" >
                             <span class="h5">Barcode Generator</span>
                             <span class="float-right" style=margin-buttom:0px>tgl 25-Feb-2024</span>
