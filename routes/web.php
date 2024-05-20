@@ -67,3 +67,7 @@ Route::get('/Chart', function () {
 Route::get('/Currency', function () {
     return view('Currency');
 });
+
+Route::get('/Notification', function () {
+    return view('Notification');
+});
