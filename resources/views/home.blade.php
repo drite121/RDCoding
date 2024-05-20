@@ -7,7 +7,7 @@
                     <a href="Currency">
                         <div class="card-body border" >
                             <span class="h5">Currency</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 03-Mar-2024</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 10-Mar-2024</span>
                         </div>
                     </a>
                     <a href="Chart">
