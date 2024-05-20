@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\QRGeneratorController;
 use App\Http\Controllers\BarcodeGeneratorController;
-use App\Http\Controllers\ChartController;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Http\Controllers\CurrencyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,4 +62,8 @@ Route::get('/DownloadBarcode', [BarcodeGeneratorController::class, 'Download']);
 
 Route::get('/Chart', function () {
     return view('Chart');
+});
+
+Route::get('/Currency', function () {
+    return view('Currency');
 });

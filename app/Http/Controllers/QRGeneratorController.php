@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
-class QRController extends Controller
+class QRGeneratorController extends Controller
 {
     public function Generate(Request $request)
     {
