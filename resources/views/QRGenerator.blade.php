@@ -27,7 +27,6 @@
             },
             success: function(result) {
                 $("#result").html(result);
-                console.log(url);
             },
             error: function(result) {
                 alert('Maaf Proses Generate Tanggu, Harap Hub Dev');
