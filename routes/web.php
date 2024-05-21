@@ -79,3 +79,7 @@ Route::get('/GuessNumber', function () {
 Route::get('/DadJokes', function () {
     return view('DadJokes');
 });
+
+Route::get('/ColorPalette', function () {
+    return view('ColorPalette');
+});

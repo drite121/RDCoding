@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="ColorPalette">
+                        <div class="card-body border" >
+                            <span class="h5">Color Palette</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 31-Mar-2024</span>
+                        </div>
+                    </a>
                     <a href="DadJokes">
                         <div class="card-body border" >
                             <span class="h5">Dad Jokes</span>
