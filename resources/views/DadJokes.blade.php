@@ -29,7 +29,10 @@
                                     <br>
                                     <button type="button" class="btn btn-primary btn-block" onclick="Generate()">Get Joke</button>
                                     <br>
-                                    
+                                    <P>Source:
+                                        <br>
+                                        <a href="https://wesbos.com/javascript/13-ajax-and-fetching-data/76-dad-jokes">wesbos.com</a>
+                                    <p>
                                 </div>
                                 <div class="col-md-3">
                                 </div>
