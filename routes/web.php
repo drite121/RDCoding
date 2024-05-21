@@ -75,3 +75,7 @@ Route::get('/Notification', function () {
 Route::get('/GuessNumber', function () {
     return view('GuessNumber');
 });
+
+Route::get('/DadJokes', function () {
+    return view('DadJokes');
+});

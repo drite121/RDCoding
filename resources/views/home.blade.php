@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="DadJokes">
+                        <div class="card-body border" >
+                            <span class="h5">Dad Jokes</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 24-Mar-2024</span>
+                        </div>
+                    </a>
                     <a href="GuessNumber">
                         <div class="card-body border" >
                             <span class="h5">Guess The Number</span>
