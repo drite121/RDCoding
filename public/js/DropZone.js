@@ -62,7 +62,6 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     // Show thumbnail for image files
     if (file.type.startsWith("image/")) {
       const reader = new FileReader();
-        console.log(reader);
       reader.readAsDataURL(file);
       reader.onload = () => {
         thumbnailElement.src = reader.result;

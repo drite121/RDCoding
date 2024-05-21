@@ -296,6 +296,7 @@ const main = (data) => {
       canvas.height = image.height;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0);
+      console.log("test");
 
       /**
        * getImageData returns an array full of RGBA values
@@ -318,7 +319,7 @@ const main = (data) => {
       // Create the HTML structure to show the color palette
       buildPalette(quantColors);
     };
-    // image.src = fileReader.result;
+    image.src = fileReader.result;
   };
   fileReader.readAsDataURL(file);
 };
