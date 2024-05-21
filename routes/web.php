@@ -71,3 +71,7 @@ Route::get('/Currency', function () {
 Route::get('/Notification', function () {
     return view('Notification');
 });
+
+Route::get('/GuessNumber', function () {
+    return view('GuessNumber');
+});

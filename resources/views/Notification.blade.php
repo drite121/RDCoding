@@ -1,19 +1,37 @@
 @extends('layouts.app')
 @section('content')
-
     <script>
+        navigator.serviceWorker.register("{{ asset('js/sw.js') }}");
+        Notification.requestPermission().then(function(permission) {
+  if (permission === 'granted') {
+    console.log('Notification permission granted.');
+  } else {
+    console.log('Unable to get permission to notify.');
+  }
+});
+navigator.serviceWorker.ready.then(function(registration) {
+  registration.pushManager.subscribe({userVisibleOnly: true})
+  .then(function(subscription) {
+    alert("test");
+    console.log('Subscribed for push:', subscription.endpoint);
+  })
+  .catch(function(error) {
+    console.log('Subscription failed:', error);
+  });
+});
         function send() {
-            Notification.requestPermission().then(function(permission) {
-            if (permission === 'granted') {
-                var title = document.getElementById("Title").value;
-                var body = document.getElementById("Body").value;
-                new Notification(title, {
-                    body: body,
-                })
-            } else {
-                alert('Unable to get permission to notify.');
-            }
-            });
+ 
+            // Notification.requestPermission().then(function(permission) {
+            // if (permission === 'granted') {
+            //     var title = document.getElementById("Title").value;
+            //     var body = document.getElementById("Body").value;
+            //     new Notification(title, {
+            //         body: body,
+            //     })
+            // } else {
+            //     alert('Unable to get permission to notify.');
+            // }
+            // });
             
         };
 
