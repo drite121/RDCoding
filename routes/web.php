@@ -87,3 +87,7 @@ Route::get('/ColorPalette', function () {
 Route::get('/YoutubePlayer', function () {
     return view('YoutubePlayer');
 });
+
+Route::get('/EyeDroper', function () {
+    return view('EyeDroper');
+});
