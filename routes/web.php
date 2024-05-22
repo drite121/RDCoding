@@ -83,3 +83,7 @@ Route::get('/DadJokes', function () {
 Route::get('/ColorPalette', function () {
     return view('ColorPalette');
 });
+
+Route::get('/YoutubePlayer', function () {
+    return view('YoutubePlayer');
+});
