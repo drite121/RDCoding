@@ -6,9 +6,7 @@
     <script>
         $(document).ready(function() {
             var table = $('#DataList').DataTable({
-            rowReorder: {
-                selector: 'tr'
-            },
+            rowReorder: true,
             columnDefs: [{
                 targets: 0,
                 visible: false
@@ -31,10 +29,7 @@
         {
             
             var table = $('#DataList').DataTable();
-            var row = table.row(id);
-            console.log(row);
-            row.remove();
-            table.draw();
+            var row = table.row(id).remove().draw();
         }
     </script>
 
@@ -49,7 +44,7 @@
                         <label for="TextItem" class="text-center">Add Data</label>
                         <input type="text" class="form-control" id="TextItem">
                         <br>
-                        <button type="button" class="btn btn-primary btn-block" id="add">Start</button>
+                        <button type="button" class="btn btn-primary btn-block" id="add">Add</button>
                         <br>
                         <table class="table text-center table-bordered table-striped dataTable dtr-inline" id="DataList">
                         <thead>

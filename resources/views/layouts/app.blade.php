@@ -16,6 +16,9 @@
     <script src="{{ asset('js/RDZ.js') }}"></script>
     <script src="{{ asset('js/prismTN.js') }}"></script>
     <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.rowReorder.js') }}"></script>
+    <script src="{{ asset('js/rowReorder.dataTables.js') }}"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,6 +29,8 @@
     <link href="{{ asset('css/prismTN.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/rowReorder.dataTables.css') }}" rel="stylesheet">
 </head>
 
 <body>
