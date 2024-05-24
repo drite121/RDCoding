@@ -15,6 +15,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/RDZ.js') }}"></script>
     <script src="{{ asset('js/prismTN.js') }}"></script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +25,7 @@
     <link href="{{ asset('css/RDZ.css') }}" rel="stylesheet">
     <link href="{{ asset('css/prismTN.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
 </head>
 
 <body>

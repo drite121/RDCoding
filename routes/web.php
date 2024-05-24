@@ -91,3 +91,7 @@ Route::get('/YoutubePlayer', function () {
 Route::get('/EyeDroper', function () {
     return view('EyeDroper');
 });
+
+Route::get('/DataTabel', function () {
+    return view('DataTabel');
+});
