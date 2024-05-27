@@ -95,3 +95,7 @@ Route::get('/EyeDroper', function () {
 Route::get('/DataTabel', function () {
     return view('DataTabel');
 });
+
+Route::get('/ToDoList', function () {
+    return view('ToDoList');
+});

@@ -14,7 +14,6 @@
             });
             
             btnAdd = document.getElementById("add");
-            btndelete = document.getElementById("delete");
             var count = 1;
             btnAdd.addEventListener("click", function() {
                 var item = document.getElementById("TextItem").value;
