@@ -2,7 +2,7 @@
 @section('content')
     
     <script>
-        const animal=["Lion - Singa"
+        var animal=["Lion - Singa"
         ,"Elephant - Gajah"
         ,"Tiger - Harimau"
         ,"Giraffe - Jerapah"
@@ -98,15 +98,38 @@
         }
         function AddData(){
             let newData = document.getElementById("TextItem").value;
-            var data = document.createElement("p");
-            data.style.border="1px solid black";
-            data.style.marginBottom="0px";
-            data.style.display="none";
-            data.classList.add("form-control");
-            data.setAttribute("onclick", 'ChangeValue("TextItem","DropdownTable",'+'"'+newData+'"'+')');
-            data.innerHTML=newData;
-            document.getElementById("DropdownTable").appendChild(data);
-            document.getElementById("TextItem").value="";
+            let i = 0;
+            for (;animal[i];) {
+                if(animal[i]!=newData)
+                {
+                    if(i==animal.length-1)
+                    {
+                        
+                        var data = document.createElement("p");
+                        data.style.border="1px solid black";
+                        data.style.marginBottom="0px";
+                        data.style.display="none";
+                        data.classList.add("form-control");
+                        data.setAttribute("onclick", 'ChangeValue("TextItem","DropdownTable",'+'"'+newData+'"'+')');
+                        data.innerHTML=newData;
+                        document.getElementById("DropdownTable").appendChild(data);
+                        animal.push(newData);
+                        document.getElementById("TextItem").value="";
+                        break;
+                    }
+                    else;
+                    {
+                        i++
+                    }
+                }
+                else
+                {
+                    alert("The Data Already Exists");
+                    break;
+                }    
+            }
+            
+            
         }
 
     </script>
