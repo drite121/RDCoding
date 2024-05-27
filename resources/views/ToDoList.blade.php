@@ -37,7 +37,7 @@
             btnAdd.addEventListener("click", function() {
                 var Tit = document.getElementById("Tittle").value;
                 var Des = document.getElementById("Description").value;
-                table.row.add([count,'<i class="bi bi-list h2"></i>',Tit,Des,'<button type="button" class="btn btn-danger btn-block" onclick="Delete('+(count-1)+')"><i class="bi bi-trash h4"></i></button>']).draw();
+                table.row.add([count,'<i class="bi bi-list h2"></i>',Tit+'<br><i class="bi bi-caret-down-fill">',Des,'<button type="button" class="btn btn-danger btn-block" onclick="Delete('+(count-1)+')"><i class="bi bi-trash h4"></i></button>']).draw();
                 count += 1;
                 if(table.column(0).data().length>=1)
                 {

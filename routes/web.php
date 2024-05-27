@@ -99,3 +99,7 @@ Route::get('/DataTabel', function () {
 Route::get('/ToDoList', function () {
     return view('ToDoList');
 });
+
+Route::get('/Suggestion', function () {
+    return view('Suggestion');
+});

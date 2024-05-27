@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="Suggestion">
+                        <div class="card-body border" >
+                            <span class="h5">Suggestion</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 05-Mei-2024</span>
+                        </div>
+                    </a>
                     <a href="ToDoList">
                         <div class="card-body border" >
                             <span class="h5">ToDo List</span>

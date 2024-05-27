@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    
-    <link href="{{ asset('css/DropZone.css') }}" rel="stylesheet">
-
     <script>
         $(document).ready(function() {
             var table = $('#DataList').DataTable({
