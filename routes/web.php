@@ -103,3 +103,11 @@ Route::get('/ToDoList', function () {
 Route::get('/Suggestion', function () {
     return view('Suggestion');
 });
+
+Route::get('/SignaturePad', function () {
+    return view('SignaturePad');
+});
+
+Route::get('/SignaturePad', function () {
+    return view('SignaturePad');
+});
