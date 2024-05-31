@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="FiFoLiFoFeFoSimulator">
+                        <div class="card-body border" >
+                            <span class="h5">FiFo LiFo FeFo Simulation</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 19-Mei-2024</span>
+                        </div>
+                    </a>
                     <a href="SignaturePad">
                         <div class="card-body border" >
                             <span class="h5">Signature Pad</span>

@@ -111,3 +111,7 @@ Route::get('/SignaturePad', function () {
 Route::get('/SignaturePad', function () {
     return view('SignaturePad');
 });
+
+Route::get('/FiFoLiFoFeFoSimulator', function () {
+    return view('FiFoLiFoFeFoSimulator');
+});
