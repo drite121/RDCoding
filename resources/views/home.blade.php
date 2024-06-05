@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="GetIP">
+                        <div class="card-body border" >
+                            <span class="h5">Get IP</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 26-Mei-2024</span>
+                        </div>
+                    </a>
                     <a href="FiFoLiFoFeFoSimulator">
                         <div class="card-body border" >
                             <span class="h5">FiFo LiFo FeFo Simulation</span>

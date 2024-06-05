@@ -115,3 +115,7 @@ Route::get('/SignaturePad', function () {
 Route::get('/FiFoLiFoFeFoSimulator', function () {
     return view('FiFoLiFoFeFoSimulator');
 });
+
+Route::get('/GetIP', function () {
+    return view('GetIP');
+});
