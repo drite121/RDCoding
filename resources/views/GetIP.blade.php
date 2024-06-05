@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <script>
-        fetch("https://api.geoapify.com/v1/ipinfo?apiKey=zOFUEXHa97bLwtaSF6Ap")
+        fetch("https://api.geoapify.com/v1/ipinfo?apiKey=d9a5174132b24b1aba0c071e3d5190fc")
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
