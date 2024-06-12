@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\QRGeneratorController;
 use App\Http\Controllers\BarcodeGeneratorController;
-use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\EncryptDecryptController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,9 +68,9 @@ Route::get('/Currency', function () {
     return view('Currency');
 });
 
-Route::get('/Notification', function () {
-    return view('Notification');
-});
+// Route::get('/Notification', function () {
+//     return view('Notification');
+// });
 
 Route::get('/GuessNumber', function () {
     return view('GuessNumber');
@@ -119,3 +119,8 @@ Route::get('/FiFoLiFoFeFoSimulator', function () {
 Route::get('/GetIP', function () {
     return view('GetIP');
 });
+
+Route::get('/EncryptDecrypt', function () {
+    return view('EncryptDecrypt');
+});
+Route::get('/EncryptDecryptTask', [EncryptDecryptController::class, 'Task']);

@@ -10,6 +10,12 @@
                             <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
                         </div>
                     </a> -->
+                    <a href="EncryptDecrypt">
+                        <div class="card-body border" >
+                            <span class="h5">EncryptDecrypt</span>
+                            <span class="float-right" style=margin-buttom:0px>tgl 02-Jul-2024</span>
+                        </div>
+                    </a>
                     <a href="GetIP">
                         <div class="card-body border" >
                             <span class="h5">Get IP</span>
