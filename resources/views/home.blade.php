@@ -12,6 +12,12 @@
                     </a> -->
                     <!-- page 1 -->
                     <div id="Page1">
+                        <a href="PopUpModal">
+                            <div class="card-body border" >
+                                <span class="h5">PopUp Modal</span>
+                                <span class="float-right" style=margin-buttom:0px>tgl 09-Jun-2024</span>
+                            </div>
+                        </a>
                         <a href="EncryptDecrypt">
                             <div class="card-body border" >
                                 <span class="h5">EncryptDecrypt</span>
@@ -66,15 +72,15 @@
                                 <span class="float-right" style=margin-buttom:0px>tgl 07-Apr-2024</span>
                             </div>
                         </a>
+                    </div>
+                    <!-- page 2 -->
+                    <div style="display:none" id="Page2">
                         <a href="ColorPalette">
                             <div class="card-body border" >
                                 <span class="h5">Color Palette</span>
                                 <span class="float-right" style=margin-buttom:0px>tgl 31-Mar-2024</span>
                             </div>
                         </a>
-                    </div>
-                    <!-- page 2 -->
-                    <div style="display:none" id="Page2">
                         <a href="DadJokes">
                             <div class="card-body border" >
                                 <span class="h5">Dad Jokes</span>
@@ -129,15 +135,15 @@
                                 <span class="float-right" style=margin-buttom:0px>tgl 28-Jan-2024</span>
                             </div>
                         </a>
+                    </div>
+                    <!-- page 3 -->
+                    <div style="display:none" id="Page3">
                         <a href="PasswordGenerator">
                             <div class="card-body border" >
                                 <span class="h5">Password Generator</span>
                                 <span class="float-right" style=margin-buttom:0px>tgl 21-Jan-2024</span>
                             </div>
                         </a>
-                    </div>
-                    <!-- page 3 -->
-                    <div style="display:none" id="Page3">
                         <a href="GameHitung">
                             <div class="card-body border" >
                                 <span class="h5">Game Hitung</span>
@@ -184,6 +190,7 @@
                     Cpages-=1;
                     document.getElementById(Cpages).classList.add("active");
                     document.getElementById("Page"+Cpages).style.display="block";
+                    document.getElementById("Next").classList.remove("disabled");
                 }
             }
             else if(x=="Next")
@@ -217,8 +224,8 @@
             if(Cpages==1)
             {
                 document.getElementById("Previous").classList.add("disabled");
+                document.getElementById("Next").classList.remove("disabled");
             }
-            
         }
     </script>
 @endsection

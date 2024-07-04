@@ -123,4 +123,8 @@ Route::get('/GetIP', function () {
 Route::get('/EncryptDecrypt', function () {
     return view('EncryptDecrypt');
 });
-Route::get('/EncryptDecryptTask', [EncryptDecryptController::class, 'Task']);
+Route::get('/EncryptDecryptText', [EncryptDecryptController::class, 'Text']);
+
+Route::get('/PopUpModal', function () {
+    return view('PopUpModal');
+});
