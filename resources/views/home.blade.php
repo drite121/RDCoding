@@ -147,6 +147,10 @@
             {
                 document.getElementById("Next").classList.add("disabled");
             }
+            if(Cpages!=Mpages)
+            {
+                document.getElementById("Next").classList.remove("disabled");
+            }
             if(Cpages==1)
             {
                 document.getElementById("Previous").classList.add("disabled");
