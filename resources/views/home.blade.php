@@ -67,7 +67,7 @@
             {
                 newPage.setAttribute("style", "display:none");
             }
-            console.log("ini i"+i);
+            // console.log("ini i"+i);
             var j=0
             for(;j<Pages.length&&j<10;)
             {
@@ -90,14 +90,14 @@
                 TheItem1.appendChild(TheItem2);
 
                 newPage.appendChild(TheItem1);
-                console.log(newPage);
+                // console.log(newPage);
                 j++
             }
             const Home=document.getElementById("Home");
             Home.appendChild(newPage);
             Pages.splice(0, 10);
             
-            console.log(Pages);
+            // console.log(Pages);
             i++
         }        
 
