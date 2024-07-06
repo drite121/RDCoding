@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-md-12 p-0">     
                                     <div class="border border-dark p-3">
-                                        <p>Your Info:</p>
+                                        <p>Your IP Info:</p>
                                         <div class="border border-dark pl-3">
                                             <label for="Latitude">Latitude: </label>
                                             <label id="Latitude"></label>
@@ -95,9 +95,10 @@
         fetch("https://api.geoapify.com/v1/ipinfo?apiKey=d9a5174132b24b1aba0c071e3d5190fc")
         .then(response => response.json())
         .then(result => {
+            console.log(result)
             $("#Latitude").html(result.location.latitude);
             $("#Longitude").html(result.location.longitude);
-            $("#Location").html(result.city.name+', '+result.state.name+', '+result.country.name);
+            $("#Location").html(result.city.name+', '+result.country.name);
             var map = L.map('map').setView([result.location.latitude, result.location.longitude], 10);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,

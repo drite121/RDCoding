@@ -1,171 +1,23 @@
 @extends('layouts.app')
 @section('content')
+    <script>
+        
+    </script>
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <div class="card">
-                    <!-- <a href="Notification">
-                        <div class="card-body border" >
-                            <span class="h5">Notification</span>
-                            <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
-                        </div>
-                    </a> -->
-                    <!-- page 1 -->
-                    <div id="Page1">
-                        <a href="PopUpModal">
-                            <div class="card-body border" >
-                                <span class="h5">PopUp Modal</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 09-Jun-2024</span>
-                            </div>
-                        </a>
-                        <a href="EncryptDecrypt">
-                            <div class="card-body border" >
-                                <span class="h5">EncryptDecrypt</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 02-Jun-2024</span>
-                            </div>
-                        </a>
-                        <a href="GetIP">
-                            <div class="card-body border" >
-                                <span class="h5">Get IP</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 26-Mei-2024</span>
-                            </div>
-                        </a>
-                        <a href="FiFoLiFoFeFoSimulator">
-                            <div class="card-body border" >
-                                <span class="h5">FiFo LiFo FeFo Simulation</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 19-Mei-2024</span>
-                            </div>
-                        </a>
-                        <a href="SignaturePad">
-                            <div class="card-body border" >
-                                <span class="h5">Signature Pad</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 12-Mei-2024</span>
-                            </div>
-                        </a>
-                        <a href="Suggestion">
-                            <div class="card-body border" >
-                                <span class="h5">Suggestion</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 05-Mei-2024</span>
-                            </div>
-                        </a>
-                        <a href="ToDoList">
-                            <div class="card-body border" >
-                                <span class="h5">ToDo List</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 28-Apr-2024</span>
-                            </div>
-                        </a>
-                        <a href="DataTabel">
-                            <div class="card-body border" >
-                                <span class="h5">Data Tabel</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 21-Apr-2024</span>
-                            </div>
-                        </a>
-                        <a href="EyeDroper">
-                            <div class="card-body border" >
-                                <span class="h5">Eye Droper</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 14-Apr-2024</span>
-                            </div>
-                        </a>
-                        <a href="YoutubePlayer">
-                            <div class="card-body border" >
-                                <span class="h5">Youtube Player</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 07-Apr-2024</span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- page 2 -->
-                    <div style="display:none" id="Page2">
-                        <a href="ColorPalette">
-                            <div class="card-body border" >
-                                <span class="h5">Color Palette</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 31-Mar-2024</span>
-                            </div>
-                        </a>
-                        <a href="DadJokes">
-                            <div class="card-body border" >
-                                <span class="h5">Dad Jokes</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 24-Mar-2024</span>
-                            </div>
-                        </a>
-                        <a href="GuessNumber">
-                            <div class="card-body border" >
-                                <span class="h5">Guess The Number</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 17-Mar-2024</span>
-                            </div>
-                        </a>
-                        <a href="Currency">
-                            <div class="card-body border" >
-                                <span class="h5">Currency</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 10-Mar-2024</span>
-                            </div>
-                        </a>
-                        <a href="Chart">
-                            <div class="card-body border" >
-                                <span class="h5">Chart</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 03-Mar-2024</span>
-                            </div>
-                        </a>
-                        <a href="BarcodeGenerator">
-                            <div class="card-body border" >
-                                <span class="h5">Barcode Generator</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 25-Feb-2024</span>
-                            </div>
-                        </a>
-                        <a href="QRScanner">
-                            <div class="card-body border" >
-                                <span class="h5">QR Scanner</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 18-Feb-2024</span>
-                            </div>
-                        </a>
-                        <a href="SortDataJS">
-                            <div class="card-body border" >
-                                <span class="h5">Sort Data JS</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 11-Feb-2024</span>
-                            </div>
-                        </a>
-                        <a href="QRGenerator">
-                            <div class="card-body border" >
-                                <span class="h5">QR Generator</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 04-Feb-2024</span>
-                            </div>
-                        </a>
-                        <a href="BMICalculator">
-                            <div class="card-body border" >
-                                <span class="h5">BMI Calculator</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 28-Jan-2024</span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- page 3 -->
-                    <div style="display:none" id="Page3">
-                        <a href="PasswordGenerator">
-                            <div class="card-body border" >
-                                <span class="h5">Password Generator</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 21-Jan-2024</span>
-                            </div>
-                        </a>
-                        <a href="GameHitung">
-                            <div class="card-body border" >
-                                <span class="h5">Game Hitung</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 14-Jan-2024</span>
-                            </div>
-                        </a>
-                        <a href="Random">
-                            <div class="card-body border" >
-                                <span class="h5">Random</span>
-                                <span class="float-right" style=margin-buttom:0px>tgl 07-Jan-2024</span>
-                            </div>
-                        </a>
+                    <div id="Home">
+
                     </div>
                     <br>
                     <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
+                        <ul class="pagination justify-content-center" id="Pagination">
                             <li class="page-item disabled"  onclick="ChangePage('Previous')" id="Previous">
                             <a class="page-link" href="#">Previous</a>
                             </li>
-                            <li class="page-item active" onclick="ChangePage(1)" id="1"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item" onclick="ChangePage(2)" id="2"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item" onclick="ChangePage(3)" id="3"><a class="page-link" href="#">3</a></li>
+                            
                             <li class="page-item" onclick="ChangePage('Next')" id="Next">
                             <a class="page-link" href="#">Next</a>
                             </li>
@@ -176,8 +28,78 @@
         </div>
     </div>
     <script>
+        // Buat Halaman
+        var Pages = {!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
+        var NumberPage= Math.floor(Pages.length/10);
+        if(NumberPage<Pages.length)
+        {
+            NumberPage+=1;
+        }
+        var i=1
+
+        for(;i<=NumberPage;)
+        {
+            const newPagination = document.createElement("li");
+            if(i==1)
+            {
+                newPagination.setAttribute("class", "page-item active");
+            }
+            else
+            {
+                newPagination.setAttribute("class", "page-item");
+            }
+            newPagination.setAttribute("onclick", "ChangePage("+i+")");
+            newPagination.setAttribute("id", i);
+
+            const ThePages = document.createElement("a");
+            ThePages.setAttribute("class", "page-link");
+            ThePages.setAttribute("href", "#");
+            ThePages.innerHTML=i;
+            
+            newPagination.appendChild(ThePages);
+            const Next=document.getElementById("Next");
+            document.getElementById("Pagination").insertBefore(newPagination,Next);
+
+        // Isi Halaman
+            const newPage = document.createElement("div");
+            newPage.setAttribute("id", "Page"+i);
+            console.log("ini i"+i);
+            var j=0
+            for(;j<Pages.length&&j<10;)
+            {
+                const TheItem1 = document.createElement("a");
+                TheItem1.setAttribute("href", Pages[j].website);
+
+                const TheItem2 = document.createElement("div");
+                TheItem2.setAttribute("class", "card-body border");
+
+                const TheItem3 = document.createElement("span");
+                TheItem3.setAttribute("class", "h5");
+                TheItem3.innerHTML=Pages[j].tittle;
+
+                const TheItem4 = document.createElement("span");
+                TheItem4.setAttribute("class", "float-right mb-0");
+                TheItem4.innerHTML=Pages[j].tanggal;
+
+                TheItem2.appendChild(TheItem4);
+                TheItem2.appendChild(TheItem3);
+                TheItem1.appendChild(TheItem2);
+
+                newPage.appendChild(TheItem1);
+                console.log(newPage);
+                j++
+            }
+            const Home=document.getElementById("Home");
+            Home.appendChild(newPage);
+            Pages.splice(0, 10);
+            
+            console.log(Pages);
+            i++
+        }        
+
+        // Buat Pindah Halaman
         var Cpages=1;
-        const Mpages=3;
+        var Mpages=NumberPage;
         function ChangePage(x)
         {
             

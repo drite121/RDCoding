@@ -12,7 +12,7 @@
             <div class="col-sm-8">
                 <div class="bg-white border">
                     <div class="card-body">
-                        <h2 class="text-center">Chart</h2>
+                        <h2 class="text-center">Currency</h2>
                         <br>
                         <div class="align-items-start">
                             <div class="form-row align-items-start">

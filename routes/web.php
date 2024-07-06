@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\QRGeneratorController;
 use App\Http\Controllers\BarcodeGeneratorController;
 use App\Http\Controllers\EncryptDecryptController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,7 @@ use App\Http\Controllers\EncryptDecryptController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/About', function () {
     return view('About');
