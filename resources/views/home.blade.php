@@ -63,6 +63,10 @@
         // Isi Halaman
             const newPage = document.createElement("div");
             newPage.setAttribute("id", "Page"+i);
+            if(i>1)
+            {
+                newPage.setAttribute("style", "display:none");
+            }
             console.log("ini i"+i);
             var j=0
             for(;j<Pages.length&&j<10;)
