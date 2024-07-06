@@ -9,6 +9,6 @@ class HomeController extends Controller
     public function index()
     {
         $listData = Pages::select()->orderBy('id', 'DESC')->get();
-        return view('Home',compact('listData'));
+        return view('home',compact('listData'));
     }
 }
