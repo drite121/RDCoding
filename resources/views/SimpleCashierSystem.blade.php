@@ -244,7 +244,7 @@
             {
                 if(barang[i].code==code)
                 {
-                    document.getElementById("TheText").innerHTML ="Are you sure to delete "+barang[i].nama;
+                    document.getElementById("TheText").innerHTML =barang[i].nama;
                 }
                 i++
             }

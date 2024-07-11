@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 id="TheTittle">This is the text you have written<h4>
+                <h4 id="TheTittle">Are you sure to delete<h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="panel-body">
