@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\QRGeneratorController;
 use App\Http\Controllers\BarcodeGeneratorController;
 use App\Http\Controllers\EncryptDecryptController;
+use App\Http\Controllers\SimpleCashierSystemController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +128,5 @@ Route::get('/EncryptDecryptText', [EncryptDecryptController::class, 'Text']);
 Route::get('/PopUpModal', function () {
     return view('PopUpModal');
 });
+
+Route::get('/SimpleCashierSystem', [SimpleCashierSystemController::class, 'index']);

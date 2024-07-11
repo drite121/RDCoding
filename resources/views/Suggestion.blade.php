@@ -69,6 +69,7 @@
         </div>
     </div>
     <script>
+        //show data
         function onload(){
             let i = 0;
             for (;animal[i];) {
@@ -84,7 +85,7 @@
             }
         }
         onload();
-
+        //change value when clicked
         function ChangeValue(input,dropdown,value){
             input = document.getElementById(input);
             input.value=value;
@@ -96,6 +97,7 @@
                     a[i].style.display = "none";
             }
         }
+        //add new animal
         function AddData(){
             let newData = document.getElementById("TextItem").value;
             let i = 0;
