@@ -11,8 +11,8 @@
                         <p id="TheText"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal" id="DelAgree">Hapus</button>
-                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal" id="DelAgree">Delete</button>
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </form>
             </div>
