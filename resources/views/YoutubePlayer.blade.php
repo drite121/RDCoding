@@ -29,7 +29,12 @@
             "https://www.youtube.com/embed/videoseries?si=Z5WyVOBmpC6X_rCZ&autoplay=1&amp;list=PLcY9e6roQLvA9cAFWWP1TKZFR_csnD6gJ",
             "https://www.youtube.com/embed/videoseries?si=I1AbKGFgsm1nG04R&autoplay=1&amp;list=PLcY9e6roQLvDZ1qSpSTjP8z3wiU_5LvVB",
             "https://www.youtube.com/embed/videoseries?si=AWn-dwgi8R-4v-D_&autoplay=1&amp;list=PLcY9e6roQLvC1HbAATeFyhQVwbNIKGNWz",
-           "https://www.youtube.com/embed/videoseries?si=ighaqqq8qM-Ivm28&autoplay=1&amp;list=PLcY9e6roQLvBzdK_txRl-qYl67YrLd9Ma"
+            "https://www.youtube.com/embed/videoseries?si=ighaqqq8qM-Ivm28&autoplay=1&amp;list=PLcY9e6roQLvBzdK_txRl-qYl67YrLd9Ma",
+            "https://www.youtube.com/embed/videoseries?si=TThrPlJbnvVCCxv6&autoplay=1&amp;list=PLcY9e6roQLvA44a5t1Bhod2O9KdZILsSs",
+            "https://www.youtube.com/embed/videoseries?si=AbeLT3EN9pbrxlsa&autoplay=1&amp;list=PLcY9e6roQLvDtDqQ94dr0go0r2Qg_1r3T",
+            "https://www.youtube.com/embed/videoseries?si=Nxk-BQeRXGeCUeBU&autoplay=1&amp;list=PLcY9e6roQLvBI1I-x3cTvl_t054f2oZKB",
+            "https://www.youtube.com/embed/videoseries?si=R9J_XdrQR9GbR1xC&autoplay=1&amp;list=PLcY9e6roQLvBOyZItoP9uaU9QIPMkq7Ft",
+
         ]
 
         RNG=Math.floor(Math.random()* 4);
