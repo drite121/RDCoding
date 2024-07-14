@@ -132,5 +132,6 @@ Route::get('/PopUpModal', function () {
 
 Route::get('/SimpleCashierSystem', [SimpleCashierSystemController::class, 'index']);
 
+Route::get('/SearchableSelectbox', [Select2Controller::class, 'SearchableSelectbox']);
 
-Route::get('/SearchableSelectbox', [Select2Controller::class, 'index']);
+Route::get('/MultiSelectbox', [Select2Controller::class, 'MultiSelectbox']);

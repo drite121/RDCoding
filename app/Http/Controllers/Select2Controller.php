@@ -6,9 +6,15 @@ use App\Models\Barangs;
 
 class Select2Controller extends Controller
 {
-    public function index()
+    public function SearchableSelectbox()
     {
         $listData = Barangs::select()->get();
         return view('SearchableSelectbox',compact('listData'));
+    }
+
+    public function MultiSelectbox()
+    {
+        $listData = Barangs::select()->get();
+        return view('MultiSelectbox',compact('listData'));
     }
 }
