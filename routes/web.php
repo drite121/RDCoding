@@ -6,6 +6,7 @@ use App\Http\Controllers\QRGeneratorController;
 use App\Http\Controllers\BarcodeGeneratorController;
 use App\Http\Controllers\EncryptDecryptController;
 use App\Http\Controllers\SimpleCashierSystemController;
+use App\Http\Controllers\Select2Controller;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -130,3 +131,6 @@ Route::get('/PopUpModal', function () {
 });
 
 Route::get('/SimpleCashierSystem', [SimpleCashierSystemController::class, 'index']);
+
+
+Route::get('/SearchableSelectbox', [Select2Controller::class, 'index']);

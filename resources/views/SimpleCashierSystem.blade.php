@@ -32,7 +32,13 @@
                 }
             }
         }
-
+        function MF(number)
+        {
+            return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR"
+            }).format(number);
+        }
         
     </script>
     <div class="container-fluid">
@@ -164,9 +170,15 @@
                         const NewPrice = document.createElement("div");
                         NewPrice.setAttribute("class", "col-md-3");
                         const ThePrice = document.createElement("p");
-                        ThePrice.setAttribute("id", "Price"+barang[i].code);
-                        ThePrice.innerHTML=barang[i].harga;
+                        ThePrice.setAttribute("id", "SPrice"+barang[i].code);
+                        ThePrice.innerHTML=MF(barang[i].harga);
+                        //HidPrice
+                        const TheHidPrice = document.createElement("p");
+                        TheHidPrice.setAttribute("id", "Price"+barang[i].code);
+                        TheHidPrice.setAttribute("class", "d-none");
+                        TheHidPrice.innerHTML=barang[i].harga;
                         NewPrice.appendChild(ThePrice);
+                        NewPrice.appendChild(TheHidPrice);
                         //Total
                         const NewTotal = document.createElement("div");
                         NewTotal.setAttribute("class", "col-md-2");
@@ -198,7 +210,6 @@
                         break;
                     }
                 }
-                
                 i++
             }
             
@@ -224,10 +235,10 @@
                 var order=parseInt(document.getElementById("Order"+item[i]).value);
                 var price=parseInt(document.getElementById("Price"+item[i]).innerHTML);
                 var total = order*price;
-                document.getElementById("Total"+item[i]).innerHTML=total;
+                document.getElementById("Total"+item[i]).innerHTML=MF(total);
                 
                 Gtotal +=total;
-                document.getElementById("GrandTotal").innerHTML=Gtotal;
+                document.getElementById("GrandTotal").innerHTML=MF(Gtotal);
                 i++
             }
         }

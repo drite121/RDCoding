@@ -14,7 +14,7 @@
                 
             },
             error: function(result) {
-                alert('Maaf Proses Generate Tanggu, Harap Hub Dev');
+                alert('Maaf Proses Generate ERROR, Harap Hub Dev');
             }
         });
             document.getElementById("download").style.display = "block";
