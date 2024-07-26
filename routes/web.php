@@ -109,10 +109,6 @@ Route::get('/SignaturePad', function () {
     return view('SignaturePad');
 });
 
-Route::get('/SignaturePad', function () {
-    return view('SignaturePad');
-});
-
 Route::get('/FiFoLiFoFeFoSimulator', function () {
     return view('FiFoLiFoFeFoSimulator');
 });
@@ -131,7 +127,21 @@ Route::get('/PopUpModal', function () {
 });
 
 Route::get('/SimpleCashierSystem', [SimpleCashierSystemController::class, 'index']);
+Route::get('/FinishNota', [SimpleCashierSystemController::class, 'finish']);
+Route::get('/PrintNota/{id}', [SimpleCashierSystemController::class, 'print']);
+Route::get('/ListNota', [SimpleCashierSystemController::class, 'list']);
+Route::get('/DetailNota', [SimpleCashierSystemController::class, 'detail']);
+
 
 Route::get('/SearchableSelectbox', [Select2Controller::class, 'SearchableSelectbox']);
 
 Route::get('/MultiSelectbox', [Select2Controller::class, 'MultiSelectbox']);
+
+
+Route::get('/DirectPrint', function () {
+    return view('DirectPrint');
+});
+
+Route::get('/TestPrint', function () {
+    return view('TestPrint');
+});

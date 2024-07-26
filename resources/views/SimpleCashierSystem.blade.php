@@ -1,9 +1,13 @@
 @extends('layouts.app')
 @section('content')
 @include('modalDel')
+@include('modalHistoryN')
+@include('modalDetailN')
 <script>
         var barang={!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
         var item=[];
+        var qty=[];
+        var alldata=[];
         function filterFunction(input,dropdown) {
             var input, filter, ul, li, a, i;
             input = document.getElementById(input);
@@ -39,22 +43,195 @@
             currency: "IDR"
             }).format(number);
         }
+
+        $(function () {
+            $('.ShowHistoryN').on('click', function (e) {
+                e.preventDefault();
+                $('#modalHistoryN').modal({ backdrop: 'static', keyboard: false })
+                    .on('click', function(){
+                    var $url=$('.form').attr('action');
+                        window.open($url, '_self');
+                    });
+                
+                    $.ajax({
+                        type: "GET",
+                        url: '{{url("ListNota")}}',
+                        success: function(result) {
+                            // console.log(result[1].tanggal);
+                            const list = document.getElementById("ListHistoryN");
+                            while (list.hasChildNodes()) {
+                                list.removeChild(list.firstChild);
+                            }
+                            if(!result.length)
+                            {
+                                const NewHN = document.createElement("div");
+                                NewHN.setAttribute("class", "border d-flex justify-content-center");
+                                const TheNota = document.createElement("Label");
+                                TheNota.innerHTML="No data input today";
+                                NewHN.appendChild(TheNota);
+                                list.appendChild(NewHN); 
+                            }
+                            var i=0
+                            for(;i<result.length;)
+                            {
+                                const NewHN = document.createElement("div");
+                                NewHN.setAttribute("class", "border");
+                                NewHN.setAttribute("onclick", "ShowDetailN('"+result[i].nonota+"')");
+                                const TheNota = document.createElement("Label");
+                                TheNota.setAttribute("style", "color:blue;cursor: pointer;");
+                                TheNota.setAttribute("class", "mb-0 py-2 pl-2");
+                                
+                                TheNota.innerHTML=result[i].tanggal+"/"+result[i].nonota;
+                                NewHN.appendChild(TheNota);
+                                list.appendChild(NewHN); 
+                                i++
+                            }
+                        },
+                        error: function(result) {
+                            alert('Maaf Proses Generate ERROR, Harap Hub Dev');
+                        }
+                    });
+                    $.ajax({
+                        type: "GET",
+                        url: '{{url("DetailNota")}}',
+                        success: function(result) {
+                            // console.log(result);
+                            alldata=result;
+                        },
+                        error: function(result) {
+                            alert('Maaf Proses Generate ERROR, Harap Hub Dev');
+                        }
+                    });
+            });
+        });
+
+        function ShowDetailN(Nota)
+        {
+            $('#modalDetailN').modal({ backdrop: 'static', keyboard: false })
+            .on('click', function(){
+                var $url=$('.form').attr('action');
+                window.open($url, '_self');
+            });
+                $('#modalHistoryN').modal('hide');
+
+            const list = document.getElementById("ListBarangN");
+            while (list.hasChildNodes()) {
+                list.removeChild(list.firstChild);
+            }
+            var MGT=0;
+            var i=0;
+            for(;i<alldata.length;)
+            {
+                if(i==0)
+                {   
+                    const NewHead = document.createElement("div");
+                    NewHead.setAttribute("class", "form-row align-items-center border-bottom");
+                    //Name
+                    const HeadName = document.createElement("div");
+                    HeadName.setAttribute("class", "col-md-4");
+                    const TheName = document.createElement("p");
+                    TheName.innerHTML="Nama";
+                    HeadName.appendChild(TheName);
+                    //Qty
+                    const HeadOrder = document.createElement("div");
+                    HeadOrder.setAttribute("class", "col-md-2");
+                    const TheOrder = document.createElement("p");
+                    TheOrder.innerHTML="Qty";
+                    HeadOrder.appendChild(TheOrder);
+                    //Price
+                    const HeadPrice = document.createElement("div");
+                    HeadPrice.setAttribute("class", "col-md-3");
+                    const ThePrice = document.createElement("p");
+                    ThePrice.innerHTML="Price";
+                    HeadPrice.appendChild(ThePrice);
+                    //Total
+                    const HeadTotal = document.createElement("div");
+                    HeadTotal.setAttribute("class", "col-md-3");
+                    const TheTotal = document.createElement("p");
+                    TheTotal.innerHTML="Total";
+                    HeadTotal.appendChild(TheTotal);
+
+                    NewHead.appendChild(HeadName);
+                    NewHead.appendChild(HeadOrder);
+                    NewHead.appendChild(HeadPrice);
+                    NewHead.appendChild(HeadTotal);
+
+                    list.appendChild(NewHead);
+                }
+                if(alldata[i].nonota==Nota)
+                {
+                    const HistoryItem = document.createElement("div");
+                    HistoryItem.setAttribute("class", "form-row align-items-center border-bottom");
+                    
+
+                    //Name
+                    const HistoryName = document.createElement("div");
+                    HistoryName.setAttribute("class", "col-md-4");
+                    const TheName = document.createElement("p");
+                    TheName.innerHTML=alldata[i].nama;
+                    HistoryName.appendChild(TheName);
+                    //Qty
+                    const HistoryOrder = document.createElement("div");
+                    HistoryOrder.setAttribute("class", "col-md-2");
+                    const TheOrder = document.createElement("p");
+                    TheOrder.innerHTML=(alldata[i].qty);
+                    HistoryOrder.appendChild(TheOrder);
+                    //Price
+                    const HistoryPrice = document.createElement("div");
+                    HistoryPrice.setAttribute("class", "col-md-3");
+                    const ThePrice = document.createElement("p");
+                    ThePrice.innerHTML=MF(alldata[i].harga);
+                    HistoryPrice.appendChild(ThePrice);
+                    //Total
+                    const HistoryTotal = document.createElement("div");
+                    HistoryTotal.setAttribute("class", "col-md-3");
+                    const TheTotal = document.createElement("p");
+                    TheTotal.setAttribute("id", "Total"+alldata[i].code);
+                    TheTotal.innerHTML=MF(alldata[i].harga*alldata[i].qty);
+                    HistoryTotal.appendChild(TheTotal);
+
+                    HistoryItem.appendChild(HistoryName);
+                    HistoryItem.appendChild(HistoryOrder);
+                    HistoryItem.appendChild(HistoryPrice);
+                    HistoryItem.appendChild(HistoryTotal);
+                    MGT+=alldata[i].harga*alldata[i].qty;
+
+                    list.appendChild(HistoryItem);
+                    document.getElementById('tanggal').innerHTML=alldata[i].tanggal;
+                }
+                i++
+            }
+            document.getElementById("MGT").innerHTML=MF(MGT);
+
+            // document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+Nota;
+            
+            document.getElementById('nomor').innerHTML=Nota;
+        }
+
+    $('.tutup').click(function() {
+        $('#modalHistoryN').modal('show');
+    });
         
     </script>
     <div class="container-fluid">
         <div class="row justify-content-center">
+        <div class="col-sm-8">
+                <div class="bg-white border">
+                <h2 class="text-center mt-2">Simple Cashier System</h2>
+                </div>
+            </div>
             <div class="col-sm-8">
                 <div class="bg-white border">
                     <div class="card-body">
-                        <h2 class="text-center">Simple Cashier System</h2>
-                        <br>
+                        
                         <div class="align-items-center">
+                        <button type="button" class="btn btn-primary btn-sm float-right ShowHistoryN">History Nota</button>
                             <label for="TextItem" class="text-center">Item</label>
                             <input type="text" class="form-control" id="TextItem"  onkeyup="filterFunction('TextItem','DropdownTable')" placeholder="Code/Name" require>
                             <div id="DropdownTable" class="position-sticky sticky-top">
                             <!-- <p style="border:1px solid black;margin-bottom: 0px;display: none" class="form-control" onclick="ChangeValue('TextItem','DropdownUser','Lion - Singa')">Lion - Singa</p> -->
                             </div>
-                            <label><i>click to add the item</i></label>
+                            <label><i>click the item to add</i></label>
                             <br>
                             
                         </div>
@@ -70,7 +247,7 @@
                                 <p>Items</p>
                             </div>
                             <div class="col-md-3">
-                                <p>Order</p>
+                                <p>Qty</p>
                             </div>
                             <div class="col-md-3">
                                 <p>@price</p>
@@ -103,8 +280,9 @@
             <div class="col-sm-8">
                 <div class="bg-white border">
                     <div class="card-body"id="listItem">
+                        <iframe src="" id="printn" name="printn" class="d-none"></iframe>
                         <div class="form-row align-items-center border-bottom">
-                        <button type="button" class="btn btn-primary btn-block" onclick="Clear()">Clear Item</button>
+                        <button type="button" class="btn btn-primary btn-block" onclick="Finish()">Finish</button>
                         </div>
                     </div>
                 </div>
@@ -139,6 +317,8 @@
                 {
                     x=parseInt(document.getElementById("Order"+code+"").value);
                     document.getElementById("Order"+code).value=x+1;
+                    let getindex = item.indexOf(code);
+                    qty[getindex]= x+1;
                     break;
                 }
                 else
@@ -146,6 +326,7 @@
                     if(barang[i].code==code)
                     {
                         item.push(barang[i].code);
+                        qty.push(1);
                         //HEAD
                         const NewItem = document.createElement("div");
                         NewItem.setAttribute("class", "form-row align-items-center border-bottom");
@@ -156,7 +337,7 @@
                         const TheName = document.createElement("p");
                         TheName.innerHTML=barang[i].nama;
                         NewName.appendChild(TheName);
-                        //Order
+                        //Qty
                         const NewOrder = document.createElement("div");
                         NewOrder.setAttribute("class", "col-md-3");
                         const TheOrder = document.createElement("input");
@@ -235,6 +416,7 @@
                 var order=parseInt(document.getElementById("Order"+item[i]).value);
                 var price=parseInt(document.getElementById("Price"+item[i]).innerHTML);
                 var total = order*price;
+                qty[i]=order;
                 document.getElementById("Total"+item[i]).innerHTML=MF(total);
                 
                 Gtotal +=total;
@@ -279,16 +461,37 @@
             Total();
         }
 
+        function Finish()
+        {
+            //submit data ke DB
+            $.ajax({
+                type: "GET",
+                url: '{{url("FinishNota")}}',
+                data: { 
+                    "Code": item,
+                    "Qty": qty,
+                    },
+                    success: function(result) {
+                        // console.log(result)
+                        Clear();
+                        // document.getElementById('printn').src = '{{url("PrintNota")}}'
+                        document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+result;
+                    },
+                    error: function(result) {
+                        alert('Maaf Proses Generate ERROR, Harap Hub Dev');
+                    }
+            });
+            
+        }
+        // clear item di chart
         function Clear()
         {
-            var i=0;
-            for(;i<item.length;)
+            var j=0;
+            for(;j<item.length;)
             {
-                
-                const Delete = document.getElementById("Div"+item[i]);
+                const Delete = document.getElementById("Div"+item[j]);
                 Delete.parentNode.removeChild(Delete);
-                
-                i++
+                j++
             }
 
             item.splice(0, item.length);

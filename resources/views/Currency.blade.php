@@ -53,24 +53,35 @@
     </div>
 
     <script>
+    
+    function MF(number,satuan)
+        {
+            return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: satuan,
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 5
+            }).format(number);
+        }
 
     function convert(x) {
         var dari = document.getElementById("txtDari").value;
+        var dariS = document.getElementById("Dari").value;
         var ke = document.getElementById("txtKe").value;
-        console.log(x);
+        var keS = document.getElementById("Ke").value;
         if(x=="Dari")
         {
             var hasil = dari * converter;
             document.getElementById("txtKe").value=hasil;
-            document.getElementById("lblDari").innerHTML = dari;
-            document.getElementById("lblKe").innerHTML = hasil;
+            document.getElementById("lblDari").innerHTML = MF(dari,dariS);
+            document.getElementById("lblKe").innerHTML = MF(hasil,keS);
         }
         else if(x=="Ke")
-        { console.log(x);
+        { 
             var hasil = ke / converter;
             document.getElementById("txtDari").value=hasil;
-            document.getElementById("lblDari").innerHTML = hasil;
-            document.getElementById("lblKe").innerHTML = ke;
+            document.getElementById("lblDari").innerHTML = MF(hasil,dariS);
+            document.getElementById("lblKe").innerHTML = MF(ke,keS);
         }
     };
 
@@ -91,7 +102,7 @@
                 $('#txtDari').val("1");
                 $('#txtKe').val(Object.values(str));
                 converter=Object.values(str);
-                document.getElementById("lblKe").innerHTML = test;
+                document.getElementById("lblKe").innerHTML = MF(test,keUnits);
             },
             error: function(result) {
                 alert('Maaf Proses Generate Error, Harap Hub Dev');
@@ -99,9 +110,7 @@
         });
         var TDari="1";
         var TKe=document.getElementById("txtKe").value;
-        document.getElementById("lblDari").innerHTML = TDari;
-        document.getElementById("lblDariS").innerHTML = dariUnits;
-        document.getElementById("lblKeS").innerHTML = keUnits;
+        document.getElementById("lblDari").innerHTML = MF(TDari,dariUnits);
 
         $("#Dari").find("option").filter(function () {
             if ($(this).html() == tempUnitsKe)
@@ -185,17 +194,15 @@
                 var test=Object.values(str);
                 $('#txtKe').val(Object.values(str));
                 converter=Object.values(str);
-                document.getElementById("lblKe").innerHTML = test;
+                document.getElementById("lblKe").innerHTML = MF(test,"IDR");
             },
             error: function(result) {
                 alert('Maaf Proses Generate Error, Harap Hub Dev');
             }
         });
-        var TDari=document.getElementById("txtDari").value;
+        var TDari=MF(document.getElementById("txtDari").value,"USD");
         var TKe=document.getElementById("txtKe").value;
         document.getElementById("lblDari").innerHTML = TDari + "&nbsp ";
-        document.getElementById("lblDariS").innerHTML = "USD";
-        document.getElementById("lblKeS").innerHTML = "IDR";
     };
 
     
