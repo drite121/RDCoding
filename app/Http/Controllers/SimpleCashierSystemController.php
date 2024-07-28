@@ -15,7 +15,7 @@ class SimpleCashierSystemController extends Controller
         $getCountB = Barangs::count();
         if($getDate<date("Y-m-d")||$getCountN==0)
         {
-            if($getCountN>10)
+            if($getCountB>10)
             {
                 $deleted = Barangs::select()->where('id', '>', 10)->delete();
                 DB::statement('ALTER TABLE barang AUTO_INCREMENT = 10');
