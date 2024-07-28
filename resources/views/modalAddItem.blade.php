@@ -82,7 +82,7 @@
                     while (listB.hasChildNodes()) {
                         listB.removeChild(listB.firstChild);
                     }
-                    onload();
+                    onloadBarang();
                 },
                 error: function(result) {
                     alert('Maaf Proses Generate ERROR, Harap Hub Dev');

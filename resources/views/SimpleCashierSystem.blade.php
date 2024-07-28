@@ -302,7 +302,7 @@
     </div>
     <script>
         //show data
-        function onload(){
+        function onloadBarang(){
             let i = 0;
             for (;barang[i];) {
                 var data = document.createElement("p");
@@ -316,7 +316,7 @@
                 i++;                
             }
         }
-        onload();
+        onloadBarang();
         //change value when clicked
         
         function AddItems(code){
