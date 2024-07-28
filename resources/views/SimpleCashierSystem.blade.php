@@ -525,14 +525,7 @@
                 "Price": price,
             },
             success: function(result) {
-                alert(result);
-            },
-            error: function(result) {
-                alert('Maaf Proses Generate ERROR, Harap Hub Dev');
-            }
-        });
-
-        $.ajax({
+                $.ajax({
                 type: "GET",
                 url: '{{url("ListBarang")}}',
                 success: function(result) {
@@ -547,6 +540,15 @@
                     alert('Maaf Proses Generate ERROR, Harap Hub Dev');
                 }
             });
+                alert(result);
+                
+            },
+            error: function(result) {
+                alert('Maaf Proses Generate ERROR, Harap Hub Dev');
+            }
+        });
+
+        
         document.getElementById('Code').value = "";
         document.getElementById('Nama').value = "";
         document.getElementById('Price').value = 0;
