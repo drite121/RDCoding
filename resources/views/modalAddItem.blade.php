@@ -88,6 +88,10 @@
                     alert('Maaf Proses Generate ERROR, Harap Hub Dev');
                 }
             });
+        document.getElementById('Code').value = "";
+        document.getElementById('Nama').value = "";
+        document.getElementById('Price').value = 0;
+        document.getElementById('format').innerHTML = 'Rp 0,00';
     }
 
         

@@ -11,10 +11,15 @@ class SimpleCashierSystemController extends Controller
     public function index()
     {
         $getDate = Notas::max("tanggal");
-        if($getDate<date("Y-m-d"))
+        $getCountN = Notas::count();
+        $getCountB = Barangs::count();
+        if($getDate<date("Y-m-d")||$getCountN==0)
         {
-            $deleted = Barangs::select()->where('id', '>', 10)->delete();
-            DB::statement('ALTER TABLE barang AUTO_INCREMENT = 10');
+            if($getCountN>10)
+            {
+                $deleted = Barangs::select()->where('id', '>', 10)->delete();
+                DB::statement('ALTER TABLE barang AUTO_INCREMENT = 10');
+            }
             Notas::truncate();
         }
         $listData = Barangs::select()->get();
