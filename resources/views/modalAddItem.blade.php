@@ -52,47 +52,7 @@
     }
     document.onload=Change();
 
-    function AddBarang()
-    {
-        const code = document.getElementById('Code').value
-        const name = document.getElementById('Nama').value
-        const price = document.getElementById('Price').value
-        $.ajax({
-            type: "GET",
-            url: '{{url("AddBarang")}}',
-            data: { 
-                "Code": code,
-                "Name": name,
-                "Price": price,
-            },
-            success: function(result) {
-                alert(result);
-            },
-            error: function(result) {
-                alert('Maaf Proses Generate ERROR, Harap Hub Dev');
-            }
-        });
-
-        $.ajax({
-                type: "GET",
-                url: '{{url("ListBarang")}}',
-                success: function(result) {
-                    barang=result;
-                    const listB = document.getElementById("DropdownTable");
-                    while (listB.hasChildNodes()) {
-                        listB.removeChild(listB.firstChild);
-                    }
-                    onloadBarang();
-                },
-                error: function(result) {
-                    alert('Maaf Proses Generate ERROR, Harap Hub Dev');
-                }
-            });
-        document.getElementById('Code').value = "";
-        document.getElementById('Nama').value = "";
-        document.getElementById('Price').value = 0;
-        document.getElementById('format').innerHTML = 'Rp 0,00';
-    }
+    
 
         
 </script>
