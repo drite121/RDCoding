@@ -9,4 +9,6 @@ class Barangs extends Model
 {
     // use HasFactory;
     protected $table = 'barang';
+    protected $fillable = ['id','code','nama','harga'];
+    public $timestamps = false;
 }

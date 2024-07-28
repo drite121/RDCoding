@@ -3,8 +3,9 @@
 @include('modalDel')
 @include('modalHistoryN')
 @include('modalDetailN')
+@include('modalAddItem')
 <script>
-        var barang={!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
+    var barang={!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
         var item=[];
         var qty=[];
         var alldata=[];
@@ -43,6 +44,17 @@
             currency: "IDR"
             }).format(number);
         }
+
+        $(function () {
+            $('.AddItem').on('click', function (e) {
+                e.preventDefault();
+                $('#AddItem').modal({ backdrop: 'static', keyboard: false })
+                    .on('click', function(){
+                    var $url=$('.form').attr('action');
+                        window.open($url, '_self');
+                    });
+            });
+        });
 
         $(function () {
             $('.ShowHistoryN').on('click', function (e) {
@@ -225,7 +237,7 @@
                     <div class="card-body">
                         
                         <div class="align-items-center">
-                        <button type="button" class="btn btn-primary btn-sm float-right ShowHistoryN">History Nota</button>
+                        <button type="button" class="btn btn-primary btn-sm float-right AddItem">New Item</button>
                             <label for="TextItem" class="text-center">Item</label>
                             <input type="text" class="form-control" id="TextItem"  onkeyup="filterFunction('TextItem','DropdownTable')" placeholder="Code/Name" require>
                             <div id="DropdownTable" class="position-sticky sticky-top">
@@ -233,9 +245,7 @@
                             </div>
                             <label><i>click the item to add</i></label>
                             <br>
-                            
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -282,7 +292,8 @@
                     <div class="card-body"id="listItem">
                         <iframe src="" id="printn" name="printn" class="d-none"></iframe>
                         <div class="form-row align-items-center border-bottom">
-                        <button type="button" class="btn btn-primary btn-block" onclick="Finish()">Finish</button>
+                            <button type="button" class="btn btn-primary btn-block" onclick="Finish()">Finish</button>
+                            <button type="button" class="btn btn-primary btn-block ShowHistoryN">History Nota</button>
                         </div>
                     </div>
                 </div>
@@ -433,8 +444,8 @@
                 window.open($url, '_self');
             });
             var i=0;
-            for(;i<item.length;)
-            {
+            for(;i<barang.length;)
+            {                
                 if(barang[i].code==code)
                 {
                     document.getElementById("TheText").innerHTML =barang[i].nama;

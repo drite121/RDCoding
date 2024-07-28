@@ -131,6 +131,8 @@ Route::get('/FinishNota', [SimpleCashierSystemController::class, 'finish']);
 Route::get('/PrintNota/{id}', [SimpleCashierSystemController::class, 'print']);
 Route::get('/ListNota', [SimpleCashierSystemController::class, 'list']);
 Route::get('/DetailNota', [SimpleCashierSystemController::class, 'detail']);
+Route::get('/ListBarang', [SimpleCashierSystemController::class, 'ListBarang']);
+Route::get('/AddBarang', [SimpleCashierSystemController::class, 'AddBarang']);
 
 
 Route::get('/SearchableSelectbox', [Select2Controller::class, 'SearchableSelectbox']);
