@@ -35,8 +35,8 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top">
-            <div class="container col-md-12">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top RDZ0padding">
+            <div class="container col-md-12 RDZheight">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -47,6 +47,9 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link text-dark" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{ url('/Project') }}">Project</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="{{ url('/About') }}">About</a>

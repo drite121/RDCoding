@@ -18,8 +18,9 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/Project', [HomeController::class, 'project']);
 
 Route::get('/About', function () {
     return view('About');
@@ -143,7 +144,4 @@ Route::get('/MultiSelectbox', [Select2Controller::class, 'MultiSelectbox']);
 Route::get('/DirectPrint', function () {
     return view('DirectPrint');
 });
-
-Route::get('/TestPrint', function () {
-    return view('TestPrint');
-});
+Route::get('/TestPrint/{text}', [HomeController::class, 'print']);

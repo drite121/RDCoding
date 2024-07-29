@@ -38,3 +38,15 @@
 .qrPreviewVideo {
   width:100%
 }
+
+.RDZ0padding{
+  padding: 0px !important;
+}
+
+.RDZheight{
+  height: +50px !important;
+}
+
+.nav-item a:hover {
+  background-color: #f7f3f3;
+}
