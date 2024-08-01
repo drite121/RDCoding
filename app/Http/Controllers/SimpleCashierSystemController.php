@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Barangs;
 use App\Models\Notas;
+use App\Models\NotaBarangs;
 use DB;
 
 class SimpleCashierSystemController extends Controller
@@ -21,6 +22,7 @@ class SimpleCashierSystemController extends Controller
                 DB::statement('ALTER TABLE barang AUTO_INCREMENT = 10');
             }
             Notas::truncate();
+            NotaBarangs::truncate();
         }
         $listData = Barangs::select()->get();
         return view('SimpleCashierSystem',compact('listData'));
@@ -54,39 +56,44 @@ class SimpleCashierSystemController extends Controller
 
     public function finish(Request $request)
     {
-        // dd($request->Code[1]);
-        $getNo = Notas::max("nonota")+1;
+        // dd($request);
+        $AddNota = new Notas([
+            'total' => $request->Gtotal,
+            'pembayaran' => $request->Pembayaran,
+            'tanggal' => date("Y-m-d"),
+        ]);
+        $AddNota->save();
+        $getNo = Notas::max("id");
 
         for($x = 0; $x < count($request->Code); $x++)
         {
-            $AddItems = new Notas([
+            $AddItems = new NotaBarangs([
                 'nonota' => $getNo,
                 'codebarang' => $request->Code[$x],
                 'qty' => $request->Qty[$x],
-                'tanggal' => date("Y-m-d"),
             ]);
             $AddItems->save();
         }
-        
 
         return $getNo;
     }
 
-    public function print($id)
+    public function print($id, $Nama, $Address, $Phone)
     {
-        $listData = Barangs::select()->join("notabarang","codebarang","=","code")->where("nonota","=",$id)->get();
-        return view('PrintNota',compact('listData'));
+
+        $listData = Barangs::select()->join("notabarang","codebarang","=","code")->leftjoin("nota","nota.id","=","nonota")->where("nonota","=",$id)->get();
+        return view('PrintNota',compact('listData', 'Nama', 'Address', 'Phone'));
     }
 
     public function list()
     {
-        $listNota = Notas::select('nonota','tanggal')->groupBy('nonota')->groupBy('tanggal')->get()->toArray();
+        $listNota = Notas::select('id','tanggal')->groupBy('id')->groupBy('tanggal')->get()->toArray();
         return $listNota;
     }
 
     public function detail()
     {
-        $listBarang = Notas::select()->join("barang","codebarang","=","code")->get()->toArray();
+        $listBarang = NotaBarangs::select()->leftjoin("nota","nota.id","=","nonota")->join("barang","codebarang","=","code")->get()->toArray();
         return $listBarang;
     }
 

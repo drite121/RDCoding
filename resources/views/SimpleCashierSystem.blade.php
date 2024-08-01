@@ -4,11 +4,19 @@
 @include('modalHistoryN')
 @include('modalDetailN')
 @include('modalAddItem')
+@include('modalPayment')
+@include('modalProfile')
 <script>
     var barang={!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
         var item=[];
         var qty=[];
         var alldata=[];
+        var Gtotal = 0;
+
+        var exNama;
+        var exAddress;
+        var exPhone;
+        
         function filterFunction(input,dropdown) {
             var input, filter, ul, li, a, i;
             input = document.getElementById(input);
@@ -43,6 +51,23 @@
             style: "currency",
             currency: "IDR"
             }).format(number);
+        }
+
+        function ShowProfile()
+        {
+            $('#modalProfile').modal({ backdrop: 'static', keyboard: false })
+            .on('click', function(){
+                var $url=$('.form').attr('action');
+                window.open($url, '_self');
+            });
+        }
+        ShowProfile();
+
+        function setThis()
+        {
+            exNama = document.getElementById("Name").value;
+            exAddress = document.getElementById("Address").value;
+            exPhone = document.getElementById("Phone").value;
         }
 
         $(function () {
@@ -88,12 +113,12 @@
                             {
                                 const NewHN = document.createElement("div");
                                 NewHN.setAttribute("class", "border");
-                                NewHN.setAttribute("onclick", "ShowDetailN('"+result[i].nonota+"')");
+                                NewHN.setAttribute("onclick", "ShowDetailN('"+result[i].id+"')");
                                 const TheNota = document.createElement("Label");
                                 TheNota.setAttribute("style", "color:blue;cursor: pointer;");
                                 TheNota.setAttribute("class", "mb-0 py-2 pl-2");
                                 
-                                TheNota.innerHTML=result[i].tanggal+"/"+result[i].nonota;
+                                TheNota.innerHTML=result[i].tanggal+"/"+result[i].id;
                                 NewHN.appendChild(TheNota);
                                 list.appendChild(NewHN); 
                                 i++
@@ -131,6 +156,7 @@
                 list.removeChild(list.firstChild);
             }
             var MGT=0;
+            var AP=0;
             var i=0;
             for(;i<alldata.length;)
             {
@@ -170,6 +196,7 @@
 
                     list.appendChild(NewHead);
                 }
+                console.log(alldata)
                 if(alldata[i].nonota==Nota)
                 {
                     const HistoryItem = document.createElement("div");
@@ -207,15 +234,17 @@
                     HistoryItem.appendChild(HistoryPrice);
                     HistoryItem.appendChild(HistoryTotal);
                     MGT+=alldata[i].harga*alldata[i].qty;
-
+                    AP+=alldata[i].pembayaran;
+                    
                     list.appendChild(HistoryItem);
                     document.getElementById('tanggal').innerHTML=alldata[i].tanggal;
+                    document.getElementById("AP").innerHTML=MF(alldata[i].pembayaran);
+                    document.getElementById("Change").innerHTML=MF(alldata[i].pembayaran-MGT);
+                    
                 }
                 i++
             }
             document.getElementById("MGT").innerHTML=MF(MGT);
-
-            // document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+Nota;
             
             document.getElementById('nomor').innerHTML=Nota;
         }
@@ -292,7 +321,7 @@
                     <div class="card-body"id="listItem">
                         <iframe src="" id="printn" name="printn" class="d-none"></iframe>
                         <div class="form-row align-items-center border-bottom">
-                            <button type="button" class="btn btn-primary btn-block" onclick="Finish()">Finish</button>
+                            <button type="button" class="btn btn-primary btn-block" onclick="Payment()">Finish</button>
                             <button type="button" class="btn btn-primary btn-block ShowHistoryN">History Nota</button>
                         </div>
                     </div>
@@ -352,9 +381,12 @@
                         NewOrder.setAttribute("class", "col-md-3");
                         const TheOrder = document.createElement("input");
                         TheOrder.setAttribute("type", "number");
-                        TheOrder.setAttribute("class", "form-control mx-0");
+                        TheOrder.setAttribute("class", "form-control mx-0 Number");
+                        TheOrder.setAttribute("max", "1000");
+                        TheOrder.setAttribute("min", "1");
                         TheOrder.setAttribute("id", "Order"+barang[i].code);
                         TheOrder.setAttribute("onchange", "Total()");
+                        TheOrder.setAttribute("onkeypress", "return event.charCode >= 48 && event.charCode <= 57");
                         TheOrder.value=1;
                         NewOrder.appendChild(TheOrder);
                         //Price
@@ -419,7 +451,7 @@
 
         function Total()
         {
-            var Gtotal = 0;
+            Gtotal=0;
             var i=0;
             for(;i<item.length;)
             {
@@ -474,18 +506,21 @@
         function Finish()
         {
             //submit data ke DB
+            var bayar = document.getElementById('bayar').value
             $.ajax({
                 type: "GET",
                 url: '{{url("FinishNota")}}',
                 data: { 
                     "Code": item,
                     "Qty": qty,
+                    "Gtotal": Gtotal,
+                    "Pembayaran": bayar
                     },
                     success: function(result) {
                         // console.log(result)
                         Clear();
                         // document.getElementById('printn').src = '{{url("PrintNota")}}'
-                        document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+result;
+                        document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+result+'/'+exNama+'/'+exAddress+'/'+exPhone;
                     },
                     error: function(result) {
                         alert('Maaf Proses Generate ERROR, Harap Hub Dev');
@@ -547,12 +582,44 @@
                 alert('Maaf Proses Generate ERROR, Harap Hub Dev');
             }
         });
-
         
         document.getElementById('Code').value = "";
         document.getElementById('Nama').value = "";
         document.getElementById('Price').value = 0;
         document.getElementById('format').innerHTML = 'Rp 0,00';
     }
+    function Payment()
+        {
+            if(item.length===0)
+            {
+                alert("Your items still empty");
+            }
+            else
+            {
+                document.getElementById('bayar').min=Gtotal;
+                $('#modalPayment').modal({ backdrop: 'static', keyboard: false })
+                .on('click', function(){
+                    var $url=$('.form').attr('action');
+                    window.open($url, '_self');
+                });
+            }
+        }
+
+        
+
+        $(function () {
+            
+            $('#Number').on("keypress", function (evt) {
+            if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)
+            {
+                evt.preventDefault();
+            }
+            if($(".Number").val().length >= ($(".Number").attr('max').length) && $(".Number").val()>=$(".Number").attr('max'))
+            {
+                $(".Number").val($(".Number").attr('max'));
+                evt.preventDefault();
+            }
+        });
+        })
     </script>
 @endsection

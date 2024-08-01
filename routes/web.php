@@ -129,7 +129,7 @@ Route::get('/PopUpModal', function () {
 
 Route::get('/SimpleCashierSystem', [SimpleCashierSystemController::class, 'index']);
 Route::get('/FinishNota', [SimpleCashierSystemController::class, 'finish']);
-Route::get('/PrintNota/{id}', [SimpleCashierSystemController::class, 'print']);
+Route::get('/PrintNota/{id}/{Nama}/{Address}/{Phone}', [SimpleCashierSystemController::class, 'print']);
 Route::get('/ListNota', [SimpleCashierSystemController::class, 'list']);
 Route::get('/DetailNota', [SimpleCashierSystemController::class, 'detail']);
 Route::get('/ListBarang', [SimpleCashierSystemController::class, 'ListBarang']);

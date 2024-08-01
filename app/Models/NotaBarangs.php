@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Notas extends Model
+class NotaBarangs extends Model
 {
     // use HasFactory;
-    protected $table = 'nota';
-    protected $fillable = ['tanggal','total','pembayaran'];
+    protected $table = 'notabarang';
+    protected $fillable = ['nonota','codebarang','qty'];
     public $timestamps = false;
 }

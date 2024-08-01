@@ -21,10 +21,34 @@
                             <div class="col-md-3">
                             </div>
                             <div class="col-md-3">
-                                <p>Grand Total</p>
+                                <p>Grand Total:</p>
                             </div>
                             <div class="col-md-3">
                                 <p id="MGT">0</p>
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                                <p>Amount Paid:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p id="AP">0</p>
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                                <p>Change:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p id="Change">0</p>
                             </div>
                         </div>
                     </div>
@@ -41,6 +65,6 @@
     function print()
     {
         const result=document.getElementById('nomor').innerHTML;
-        document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+result;
+        document.getElementById('printn').src = '{{url("PrintNota")}}'+'/'+result+'/'+exNama+'/'+exAddress+'/'+exPhone;
     }
 </script>
