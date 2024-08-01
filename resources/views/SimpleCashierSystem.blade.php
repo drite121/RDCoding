@@ -596,6 +596,7 @@
             }
             else
             {
+                document.getElementById('bayar').value="";
                 document.getElementById('bayar').min=Gtotal;
                 $('#modalPayment').modal({ backdrop: 'static', keyboard: false })
                 .on('click', function(){
