@@ -81,11 +81,11 @@
                 TheItem3.setAttribute("class", "h5");
                 TheItem3.innerHTML=Pages[j].tittle;
 
-                const TheItem4 = document.createElement("span");
-                TheItem4.setAttribute("class", "float-right mb-0");
-                TheItem4.innerHTML=Pages[j].tanggal;
+                // const TheItem4 = document.createElement("span");
+                // TheItem4.setAttribute("class", "float-right mb-0");
+                // TheItem4.innerHTML=Pages[j].tanggal;
 
-                TheItem2.appendChild(TheItem4);
+                // TheItem2.appendChild(TheItem4);
                 TheItem2.appendChild(TheItem3);
                 TheItem1.appendChild(TheItem2);
 
