@@ -12,7 +12,7 @@
                         <button class="btn border border-dark text-center" id="clickButton"> Click Here </button>
                         <br><br>
                         <p>Jumlah Klik: <span id="clickCount">0</span></p>
-                            <textarea id="clickList" rows="4" cols="50"> </textarea>
+                            <textarea class="form-control" id="clickList" rows="4" cols="50"> </textarea>
                         <p><i>*Data is stored in the local system (cache)*<br>*To delete please delete the cache in your browser*</i></p>
                         </div>
                         <br>
