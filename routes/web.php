@@ -149,3 +149,7 @@ Route::get('/TestPrint/{text}', [HomeController::class, 'print']);
 Route::get('/Cache', function () {
     return view('Cache');
 });
+
+Route::get('/RelapseTracker', function () {
+    return view('RelapseTracker');
+});
