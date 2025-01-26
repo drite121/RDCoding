@@ -77,7 +77,7 @@
         const themeToggle = document.getElementById('theme');
 
         // Cek tema tersimpan di localStorage
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-bs-theme', savedTheme);
         themeToggle.textContent = savedTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
 
