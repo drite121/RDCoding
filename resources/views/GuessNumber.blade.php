@@ -58,7 +58,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">I am Thinking of a number Between 1 - 100</h2>
                         <h2 class="text-center">Can You Guess it</h2>

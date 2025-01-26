@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">Cache</h2>
                         <!-- <p>I tried to make a trial of click date saving</p> -->

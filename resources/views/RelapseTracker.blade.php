@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">Relapse Tracker</h2>
                         <!-- <p>I tried to make a trial of click date saving</p> -->
@@ -16,7 +16,7 @@
                         <li id="Bcounter" class="nav-item pointer w-50 border border-secondary bg-primary bg-gradient" >
                             <a class="nav-link" onclick="ShowTab('Counter')">Counter</a>
                         </li>
-                        <li id="Blog" class="nav-item pointer w-50 border border-secondary bg-light bg-gradient">
+                        <li id="Blog" class="nav-item pointer w-50 border border-secondary bg-gradient">
                             <a class="nav-link" onclick="ShowTab('Log')">Log</a>
                         </li>
                         </ul>
@@ -312,10 +312,8 @@
             if(Show=="Counter")
             {
                 ButtonCounter.classList.add("bg-primary");
-                ButtonCounter.classList.remove("bg-light");
 
-                ButtonLog.classList.add("bg-light");
-                ButtonLog.classList.remove("g-primary");
+                ButtonLog.classList.remove("bg-primary");
 
                 DisplayCounter.classList.remove("d-none");
                 DisplayLog.classList.add("d-none");
@@ -345,11 +343,9 @@
                     table.rows.add(formattedDates).order([0, 'desc']).draw();
                 });
 
-                ButtonCounter.classList.add("bg-light");
                 ButtonCounter.classList.remove("bg-primary");
 
                 ButtonLog.classList.add("bg-primary");
-                ButtonLog.classList.remove("bg-light");
                 
                 DisplayCounter.classList.add("d-none");
                 DisplayLog.classList.remove("d-none");

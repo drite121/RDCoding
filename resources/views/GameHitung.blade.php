@@ -95,7 +95,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <div class="text-center" id="home">
                             <button type="button" class="btn btn-primary" id="start" onclick="Start()">Start</button>

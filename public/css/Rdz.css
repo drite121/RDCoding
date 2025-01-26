@@ -3,3 +3,27 @@
 }
 
 .pointer {cursor: pointer;}
+
+
+
+/* Navbar sticky-top dengan background solid untuk dark mode */
+html[data-bs-theme="dark"] .navbar.sticky-top {
+  background-color: #212529 !important; /* Warna latar belakang gelap untuk dark mode */
+}
+
+/* Navbar sticky-top dengan background solid untuk light mode */
+html[data-bs-theme="light"] .navbar.sticky-top {
+  background-color: #f8f9fa !important; /* Warna latar belakang terang untuk light mode */
+}
+
+
+html[data-bs-theme="dark"] input[readonly] {
+  background-color: #212529 !important; /* Warna latar belakang gelap untuk dark mode */
+  transition: background-color 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .ml-auto {
+      margin-left: 0 !important;
+  }
+}

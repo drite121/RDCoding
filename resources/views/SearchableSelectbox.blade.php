@@ -1,23 +1,26 @@
 @extends('layouts.app')
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
        $(document).ready(function() {
-            $('.Barang').select2();
+            $('.Barang').select2( {
+            theme: 'bootstrap-5',
+        } );
         });
     </script>
 
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">Searchable Selectbox</h2>
                         <br>
                         <div class="align-items-center">
                         <label for="TextItem" class="text-center">Choose Something</label>
-                        <select class="Barang form-control" name="barang" id="barang">
+                        <select class="Barang form-control" name="barang" id="barang" data-bs-theme="dark">
                         @foreach($listData as $item)
                         <option value="{{$item['nama']}}">{{$item['nama']}}</option>
                         @endforeach  

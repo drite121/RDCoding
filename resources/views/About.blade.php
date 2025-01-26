@@ -3,8 +3,8 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
-                    <div class="card-body">
+                <div class="border" data-bs-theme="dark">
+                    <div class="card-body" >
                     <h2>RDCoding.net<h2>
                         <p class=h5>
                             <br>

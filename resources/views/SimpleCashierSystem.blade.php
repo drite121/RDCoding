@@ -257,12 +257,12 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
         <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                 <h2 class="text-center mt-2">Simple Cashier System</h2>
                 </div>
             </div>
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         
                         <div class="align-items-center">
@@ -279,7 +279,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body"id="listItem">
                         <div class="form-row align-items-center border-bottom">
                             <div class="col-md-3">     
@@ -317,7 +317,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body"id="listItem">
                         <iframe src="" id="printn" name="printn" class="d-none"></iframe>
                         <div class="form-row align-items-center border-bottom">

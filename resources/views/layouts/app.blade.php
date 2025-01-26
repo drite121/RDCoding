@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script> -->
     <script src="{{ asset('js/RDZ.js') }}"></script>
     <script src="{{ asset('js/prismTN.js') }}"></script>
     <script src="{{ asset('js/datatables.min.js') }}"></script>
@@ -25,6 +26,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/RDZ.css') }}" rel="stylesheet">
     <link href="{{ asset('css/prismTN.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.min.css') }}" rel="stylesheet">
@@ -35,7 +37,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top tab">
+        <nav class="navbar navbar-expand-md shadow sticky-top tab">
             <div class="container col-md-12">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -43,29 +45,51 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse bg-*" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex w-100">
                         <li class="nav-item active">
-                            <a class="nav-link text-dark" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="{{ url('/Project') }}">Project</a>
+                            <a class="nav-link" href="{{ url('/Project') }}">Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="{{ url('/About') }}">About</a>
+                            <a class="nav-link" href="{{ url('/About') }}">About</a>
                         </li>
+                        <li class="nav-item p-1 ml-auto">
+                            <a class="nav-link pointer" id="theme">Dark Mode</a>
+                        </li>
+                        
                     </ul>
                 </div>
                 
             </div>
         </nav>
 
-        <main class="py-4 bg-white">
+        <main class="py-4 RDZMain">
             @yield('content')
         </main>
     </div>
     <script>
        
+        document.addEventListener('DOMContentLoaded', function () {
+        const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById('theme');
+
+        // Cek tema tersimpan di localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+
+        // Event klik untuk toggle tema
+        themeToggle.addEventListener('click', function () {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            this.textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+        });
+    });
     </script>
 </body>
 

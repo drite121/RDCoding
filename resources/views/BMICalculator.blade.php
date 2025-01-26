@@ -74,7 +74,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <div class="bg-white border">
+                <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">Calculate your BMI</h2>
                         <br>
