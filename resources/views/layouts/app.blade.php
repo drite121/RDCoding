@@ -19,7 +19,8 @@
     <script src="{{ asset('js/datatables.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.rowReorder.js') }}"></script>
     <script src="{{ asset('js/rowReorder.dataTables.js') }}"></script>
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478604810076584"
+     crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
