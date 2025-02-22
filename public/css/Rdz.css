@@ -22,6 +22,30 @@ html[data-bs-theme="dark"] input[readonly] {
   transition: background-color 0.3s ease-in-out;
 }
 
+html[data-bs-theme="dark"] .select2-search{ 
+  background-color: #252525 !important;
+}
+
+html[data-bs-theme="dark"] .select2-search__field{ 
+  background-color: #252525 !important;
+  color: rgb(245, 245, 245) !important;
+}
+
+html[data-bs-theme="dark"] .select2-selection__rendered{ 
+  background-color: #252525 !important;
+  color: rgb(245, 245, 245) !important;
+}
+
+html[data-bs-theme="dark"] .select2-selection{ 
+  background-color: #252525 !important;
+  color: rgb(245, 245, 245) !important;
+}
+
+html[data-bs-theme="dark"] .select2-results{ 
+  background-color: #252525 !important;
+  color: rgb(245, 245, 245);
+}
+
 @media (max-width: 768px) {
   .ml-auto {
       margin-left: 0 !important;

@@ -153,3 +153,11 @@ Route::get('/Cache', function () {
 Route::get('/RelapseTracker', function () {
     return view('RelapseTracker');
 });
+
+Route::get('/DiscordMarkdown', function () {
+    return view('DiscordMarkdown');
+});
+
+Route::get('/SimpleLogisticsSystem', function () {
+    return view('SimpleLogisticsSystem');
+});

@@ -6,10 +6,9 @@
                 <div class="border">
                     <div class="card-body">
                         <h2 class="text-center">Cache</h2>
-                        <!-- <p>I tried to make a trial of click date saving</p> -->
                          <br>
                         <div class="text-center">
-                        <button class="btn border border-dark text-center" id="clickButton"> Click Here </button>
+                        <button class="btn  btn-primary" id="clickButton"> Click Here </button>
                         <br><br>
                         <p>Jumlah Klik: <span id="clickCount">0</span></p>
                             <textarea class="form-control" id="clickList" rows="4" cols="50"> </textarea>
