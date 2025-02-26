@@ -116,7 +116,7 @@
                             <a href="https://harrk.dev/qr-code-generator-in-laravel-10-tutorial/">QR Code Generator Tutorial</a>
                             <br>
                             <a href="https://github.com/SimpleSoftwareIO/simple-qrcode/tree/develop/docs/en">QR Code Generator Documentation</a>
-                        <p>
+                        </p>
                     </div>
                 </div>
             </div>

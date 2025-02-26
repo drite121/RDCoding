@@ -27,6 +27,11 @@
                                 </table>
                             </div>
                         </div> 
+                        <br>
+                        <P>Source:
+                            <br>
+                            <a href="https://docs.sheetjs.com/">SheetJS</a>
+                        </p>
                     </div>
                 </div>
             </div>
