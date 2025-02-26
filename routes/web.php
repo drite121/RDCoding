@@ -154,10 +154,14 @@ Route::get('/RelapseTracker', function () {
     return view('RelapseTracker');
 });
 
+Route::get('/SimpleLogisticsSystem', function () {
+    return view('SimpleLogisticsSystem');
+});
+
 Route::get('/DiscordMarkdown', function () {
     return view('DiscordMarkdown');
 });
 
-Route::get('/SimpleLogisticsSystem', function () {
-    return view('SimpleLogisticsSystem');
+Route::get('/ExportExcel', function () {
+    return view('ExportExcel');
 });

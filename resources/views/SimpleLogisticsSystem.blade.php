@@ -433,6 +433,9 @@
                             selectTruck.appendChild(option);
                         }
                     });
+
+                    document.getElementById("TruckService").classList.add("d-none");
+                    document.getElementById("ContainerService").classList.remove("d-none");
             });
         });
 
