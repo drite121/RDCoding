@@ -28,6 +28,7 @@
                         <!-- Transaction -->
                         <div id="DTransaction" class="text-center" name="TabPage">
                             <button type="button" class="btn btn-primary btn-block float-right" id="AddTransaction">Add Transaction</button>
+                            <button type="button" class="btn btn-primary btn-block" onclick="exportToExcel()">Export to Excel</button>
                             <div class="table-responsive">
                                 <table class="table text-center table-bordered table-striped dataTable dtr-inline" id="DataListTransaction">
                                     <thead>
@@ -623,6 +624,23 @@
                     }
             });
         });
+
+        function exportToExcel()
+        {
+            let transactionDetails = transactions.map(getTransactionDetails);
+
+            // Buat data dengan header
+            let data = [
+                ["ID", "Customer Name", "Container Code", "Container Size", "Truck Plate", "Truck Driver", "Rental Days", "Distance (KM)", "Total Price", "Status"],
+                ...transactionDetails.map(t => [t.id, t.customerName, t.containerCode, t.containerSize, t.truckPlate, t.truckDriver, t.rentalDays, t.distanceKM, t.totalPrice, t.status])
+            ];
+
+            let ws = XLSX.utils.aoa_to_sheet(data);
+            let wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Containers");
+
+            XLSX.writeFile(wb, "transactions.xlsx");
+        }
 
     </script>
 @endsection

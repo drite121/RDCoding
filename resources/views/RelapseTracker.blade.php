@@ -38,6 +38,7 @@
                             <h5 class="display-5">Avg Days between relapse: <span id="Avgday">0</span></h5>
                             <h5>Longest streak: <span id="LongStreak">0</span></h5>
                             <h5>Most susceptible time of relapse: <span id="susceptible">0</span></h5>
+                            <button type="button" class="btn btn-primary btn-block" onclick="exportToExcel()">Export to Excel</button>
                             <br>
                             <table class="table text-center table-bordered table-striped dataTable dtr-inline" id="DataList">
                             <thead>
@@ -165,10 +166,8 @@
 
             //hitung Avg relapse dan Longest streak
             const formattedDates = clickListData.map(date => new Date(date.date.replace(" ", "T")));
-            console.log(formattedDates.length)
             if (formattedDates.length <= 1)
             {
-                console.log("msk")
                 LongStreakDisplay.textContent = 0+" Days";
                 SusceptibleDisplay.textContent = "-";
             }
@@ -389,6 +388,23 @@
             
             table.clear().draw();
             table.rows.add(formattedDates).order([0, 'desc']).draw();
+        }
+
+        function exportToExcel()
+        {
+            let clickListData = getClickList().slice(1);
+
+            // Buat data dengan header
+            let data = [
+                ["Date", "Note"],
+                ...clickListData.map(t => [t.date, t.note])
+            ];
+
+            let ws = XLSX.utils.aoa_to_sheet(data);
+            let wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Containers");
+
+            XLSX.writeFile(wb, "RelapseData.xlsx");
         }
     </script>
 @endsection
