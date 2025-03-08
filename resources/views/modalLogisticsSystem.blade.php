@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Add Transaction<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -59,7 +59,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Detail<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -116,7 +116,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Add Customer<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -141,7 +141,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Update Customer<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -166,7 +166,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Add Container<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -194,7 +194,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Update Container<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -223,7 +223,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Add Truck<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">
@@ -251,7 +251,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="TheTittle">Add Truck<h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <label type="button" data-dismiss="modal" aria-hidden="true">x</label>
             </div>
             <div class="panel-body">
                 <div class="modal-body">

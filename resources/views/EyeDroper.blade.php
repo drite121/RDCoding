@@ -18,6 +18,7 @@
                         <button type="button" class="btn btn-primary btn-block" id="start-button">Start</button>
                         <br>
                         <p id="result"></p>
+                        <span class="border border-dark" id="result1" style="display: inline-block; width: 100px; height: 100px;"></span>
                         <br>
                         <P>Source & Tutorial:
                             <br>
@@ -33,6 +34,7 @@
     <script>
         document.getElementById("start-button").addEventListener("click", () => {
         const resultElement = document.getElementById("result");
+        const resultElementColor = document.getElementById("result1");
 
         if (!window.EyeDropper) {
             resultElement.textContent =
@@ -46,7 +48,7 @@
             .open()
             .then((result) => {
             resultElement.textContent = result.sRGBHex;
-            resultElement.style.backgroundColor = result.sRGBHex;
+            resultElementColor.style.backgroundColor = result.sRGBHex;
             })
             .catch((e) => {
             resultElement.textContent = e;

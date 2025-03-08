@@ -31,7 +31,7 @@
         // Buat Halaman
         var Pages = {!! json_encode($listData->toArray(), JSON_HEX_TAG) !!};
         var NumberPage= Math.floor(Pages.length/10);
-        if(NumberPage<Pages.length)
+        if(NumberPage<Pages.length && Pages.length % 10 !== 0)
         {
             NumberPage+=1;
         }
@@ -72,22 +72,26 @@
             for(;j<Pages.length&&j<10;)
             {
                 const TheItem1 = document.createElement("a");
+                TheItem1.setAttribute("style", "text-decoration: none;");
                 TheItem1.setAttribute("href", Pages[j].website);
 
                 const TheItem2 = document.createElement("div");
-                TheItem2.setAttribute("class", "card-body border");
+                TheItem2.setAttribute("class", "card-body border pt-3 pb-2 ps-4 RDZLinkColor");
 
                 const TheItem3 = document.createElement("span");
-                TheItem3.setAttribute("class", "h5");
+                TheItem3.setAttribute("style", "font-size: 1.2em");
                 TheItem3.innerHTML=Pages[j].tittle;
 
-                // const TheItem4 = document.createElement("span");
-                // TheItem4.setAttribute("class", "float-right mb-0");
-                // TheItem4.innerHTML=Pages[j].tanggal;
+                const TheItem4 = document.createElement("label");
+                TheItem4.setAttribute("class", "ml-2");
+                TheItem4.innerHTML=Pages[j].deskripsi;
 
-                // TheItem2.appendChild(TheItem4);
+                const br = document.createElement("br");
+                
                 TheItem2.appendChild(TheItem3);
                 TheItem1.appendChild(TheItem2);
+                TheItem2.appendChild(br);
+                TheItem2.appendChild(TheItem4);
 
                 newPage.appendChild(TheItem1);
                 // console.log(newPage);

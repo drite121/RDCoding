@@ -13,7 +13,7 @@
             <div class="col-sm-8">
                 <div class="border">
                     <div class="card-body">
-                        <h2 class="text-center">Suggestion</h2>
+                        <h2 class="text-center">QueueFlow</h2>
                         <br>
                         <div class="form-group row">
                             <label for="SpeedIn" class="col-sm-2 col-form-label text-center">Speed In</label>

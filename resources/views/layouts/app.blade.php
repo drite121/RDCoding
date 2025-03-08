@@ -53,17 +53,20 @@
                 </button>
                 <div class="collapse navbar-collapse bg-*" id="navbarSupportedContent">
                     <ul class="navbar-nav d-flex w-100">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <li class="nav-item">
+                            <a class="nav-link RDZNavColor" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/Project') }}">Project</a>
+                            <a class="nav-link RDZNavColor" href="{{ url('/Prototypes') }}">Prototypes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/About') }}">About</a>
+                            <a class="nav-link RDZNavColor" href="{{ url('/TestZone') }}">TestZone</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link RDZNavColor" href="{{ url('/About') }}">About</a>
                         </li>
                         <li class="nav-item p-1 ml-auto">
-                            <a class="nav-link pointer" id="theme">Dark Mode</a>
+                            <a class="nav-link pointer RDZNavColor" id="theme">Dark Mode</a>
                         </li>
                         
                     </ul>

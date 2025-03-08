@@ -22,6 +22,12 @@ html[data-bs-theme="dark"] input[readonly] {
   transition: background-color 0.3s ease-in-out;
 }
 
+/* ganti wana disabled page */
+html[data-bs-theme="dark"] .page-item.disabled .page-link{ 
+  background-color: #212529 !important;
+}
+
+/* untuk dark mode select2 */
 html[data-bs-theme="dark"] .select2-search{ 
   background-color: #252525 !important;
 }
@@ -38,13 +44,172 @@ html[data-bs-theme="dark"] .select2-selection__rendered{
 
 html[data-bs-theme="dark"] .select2-selection{ 
   background-color: #252525 !important;
-  color: rgb(245, 245, 245) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 html[data-bs-theme="dark"] .select2-results{ 
   background-color: #252525 !important;
   color: rgb(245, 245, 245);
 }
+
+html[data-bs-theme="dark"] .select2-selection__choice__display{ 
+  background-color: #252525 !important;
+  color: rgb(245, 245, 245);
+}
+
+html[data-bs-theme="dark"] .select2-selection__choice__remove{ 
+  background-image: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C0C0C0'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")!important;
+  color: rgb(255, 255, 255);
+}
+
+html[data-bs-theme="dark"] .select2-selection__choice__remove:hover{ 
+  background-image: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")!important;
+  color: rgb(255, 255, 255);
+}
+
+/* untuk Link di halaman2 utama */
+html[data-bs-theme="dark"] .RDZLinkColor{ 
+  color: #C0C0C0;
+}
+
+html[data-bs-theme="dark"] .RDZLinkColor:hover { 
+    outline: 2px solid #ffffff !important; /* Tambah outline agar lebih terlihat */
+    background-color: #222 !important; /* Opsional: beri efek warna */
+    border-radius: 4px !important; /* Opsional: buat sudut lebih halus */
+    font-weight: bold;
+    color: #EaE9E9;
+}
+
+html[data-bs-theme="dark"] .RDZLinkColor span{ 
+  color: #C0C0C0;
+  display: inline-block;
+  position: relative;
+}
+
+html[data-bs-theme="dark"] .RDZLinkColor span::after  { 
+  content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+html[data-bs-theme="dark"] .RDZLinkColor:hover span::after { 
+  width: 100%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+
+html[data-bs-theme="light"] .RDZLinkColor{ 
+  color: #1C1C1C;
+}
+
+html[data-bs-theme="light"] .RDZLinkColor:hover { 
+    outline: 2px solid #222 !important; /* Tambah outline agar lebih terlihat */
+    background-color: #ffffffff !important; /* Opsional: beri efek warna */
+    border-radius: 4px !important; /* Opsional: buat sudut lebih halus */
+    font-weight: bold;
+    color: #0D0D0D;
+}
+
+html[data-bs-theme="light"] .RDZLinkColor span{ 
+  color: #1C1C1C;
+  display: inline-block;
+  position: relative;
+}
+
+html[data-bs-theme="light"] .RDZLinkColor span::after  { 
+  content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.3s ease-in-out;
+}
+
+html[data-bs-theme="light"] .RDZLinkColor:hover span::after { 
+  width: 100%;
+  color: #000000;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/* untuk link nav */
+html[data-bs-theme="dark"] .RDZNavColor{ 
+  color: #C0C0C0;
+  display: inline-block; /* Pastikan ini inline-block */
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px; /* Jarak antara teks dan underline */
+}
+
+html[data-bs-theme="dark"] .RDZNavColor::after  { 
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Atur agar tidak terlalu jauh dari teks */
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+html[data-bs-theme="dark"] .RDZNavColor:hover { 
+  color: #ffffff;
+  font-weight: bold;
+}
+
+html[data-bs-theme="dark"] .RDZNavColor:hover::after  { 
+  transform: scaleX(1);
+}
+
+html[data-bs-theme="light"] .RDZNavColor{ 
+  color: #1C1C1C;
+  display: inline-block; /* Pastikan ini inline-block */
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px; /* Jarak antara teks dan underline */
+}
+
+html[data-bs-theme="light"] .RDZNavColor::after  { 
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Atur agar tidak terlalu jauh dari teks */
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+html[data-bs-theme="light"] .RDZNavColor:hover { 
+  color: #000000;
+  font-weight: bold;
+}
+
+html[data-bs-theme="light"] .RDZNavColor:hover::after  { 
+  transform: scaleX(1);
+}
+
+
 
 @media (max-width: 768px) {
   .ml-auto {

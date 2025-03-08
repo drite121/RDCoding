@@ -20,7 +20,9 @@ use App\Http\Controllers\HomeController;
 */
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/Project', [HomeController::class, 'project']);
+Route::get('/Prototypes', [HomeController::class, 'prototypes']);
+
+Route::get('/TestZone', [HomeController::class, 'testzone']);
 
 Route::get('/About', function () {
     return view('About');
@@ -110,8 +112,8 @@ Route::get('/SignaturePad', function () {
     return view('SignaturePad');
 });
 
-Route::get('/FiFoLiFoFeFoSimulator', function () {
-    return view('FiFoLiFoFeFoSimulator');
+Route::get('/QueueFlow', function () {
+    return view('QueueFlow');
 });
 
 Route::get('/GetIP', function () {
@@ -121,7 +123,7 @@ Route::get('/GetIP', function () {
 Route::get('/EncryptDecrypt', function () {
     return view('EncryptDecrypt');
 });
-Route::get('/EncryptDecryptText', [EncryptDecryptController::class, 'Text']);
+Route::get('/EncryptDecryptTask', [EncryptDecryptController::class, 'Task']);
 
 Route::get('/PopUpModal', function () {
     return view('PopUpModal');
