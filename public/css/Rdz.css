@@ -22,9 +22,52 @@ html[data-bs-theme="dark"] input[readonly] {
   transition: background-color 0.3s ease-in-out;
 }
 
-/* ganti wana disabled page */
+/* ganti warna page */
 html[data-bs-theme="dark"] .page-item.disabled .page-link{ 
   background-color: #212529 !important;
+}
+
+html[data-bs-theme="light"] .page-item.disabled .page-link{ 
+  background-color: #c1c3c5 !important;
+}
+
+html[data-bs-theme="dark"] .page-item.active .page-link{ 
+  background-color: #48494B !important;
+  border-color: #C0C0C0 !important;
+  pointer-events: none;
+}
+
+html[data-bs-theme="light"] .page-item.active .page-link{ 
+  background-color: #1e1e1f !important;
+  border-color: #C0C0C0 !important;
+  pointer-events: none;
+}
+
+html[data-bs-theme="dark"] a:focus{ 
+  outline: none;
+  box-shadow: none;
+}
+
+html[data-bs-theme="light"] a:focus{ 
+  outline: none;
+  box-shadow: none;
+}
+
+html[data-bs-theme="dark"] a.page-link {
+  color:white;
+}
+
+html[data-bs-theme="light"] a.page-link {
+  color:black;
+  border-color: #797777 !important;
+}
+
+a
+{
+  user-select: none; /* Mencegah teks bisa diblok */
+  -webkit-user-select: none; /* Untuk browser berbasis WebKit */
+  -moz-user-select: none; /* Untuk Firefox */
+  -ms-user-select: none; /* Untuk Internet Explorer */
 }
 
 /* untuk dark mode select2 */

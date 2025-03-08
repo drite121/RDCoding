@@ -103,6 +103,10 @@
             
             // console.log(Pages);
             i++
+        }
+        if(NumberPage==1)
+        {
+            document.getElementById("Next").classList.add("disabled");
         }        
 
         // Buat Pindah Halaman
@@ -138,6 +142,7 @@
             {
                 document.getElementById(Cpages).classList.remove("active");
                 document.getElementById("Page"+Cpages).style.display="none";
+
                 document.getElementById(x).classList.add("active");
                 document.getElementById("Page"+x).style.display="block";
                 Cpages=x;
@@ -155,7 +160,7 @@
             {
                 document.getElementById("Next").classList.remove("disabled");
             }
-            if(Cpages==1)
+            if(Cpages==1 && Mpages>1)
             {
                 document.getElementById("Previous").classList.add("disabled");
                 document.getElementById("Next").classList.remove("disabled");
